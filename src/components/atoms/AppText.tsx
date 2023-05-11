@@ -1,6 +1,6 @@
 import React from 'react';
-import useGlobalStyles from '../../styles/Globals';
 import {StyleProp, Text, TextStyle} from 'react-native';
+import useTextStyles, {TextStyleTypes} from '../../styles/Text';
 
 export type TextProps = {
   style?: StyleProp<TextStyle>;
@@ -8,11 +8,11 @@ export type TextProps = {
 };
 
 type AppTextProps = TextProps & {
-  globalStyleKey: keyof ReturnType<typeof useGlobalStyles>;
+  globalStyleKey: TextStyleTypes;
 };
 
 const AppText = ({style, children, globalStyleKey}: AppTextProps) => {
-  const globalStyles = useGlobalStyles();
+  const globalStyles = useTextStyles();
 
   return <Text style={[globalStyles[globalStyleKey], style]}>{children}</Text>;
 };

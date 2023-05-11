@@ -1,7 +1,9 @@
 import useStyles from '../hooks/useStyles';
 import {StyleProp, TextStyle} from 'react-native';
 
-const useGlobalStyles = () =>
+export type TextStyleTypes = keyof ReturnType<typeof useTextStyles>;
+
+const useTextStyles = () =>
   useStyles(({colorPalette}) => {
     const textDefaults: StyleProp<TextStyle> = {
       color: colorPalette.foreground,
@@ -41,10 +43,7 @@ const useGlobalStyles = () =>
         ...textDefaults,
         fontWeight: 'bold',
       },
-      divider: {
-        marginVertical: 16,
-      },
     };
   });
 
-export default useGlobalStyles;
+export default useTextStyles;
