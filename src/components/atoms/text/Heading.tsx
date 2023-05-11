@@ -1,14 +1,14 @@
 import React from 'react';
-import {Text} from 'react-native';
-import {TextProps} from './NormalText';
-import useGlobalStyles from '../../../styles/Globals';
+import AppText, {TextProps} from '../AppText';
 
 type HeadingProps = TextProps;
 
 const Heading = ({style, children}: HeadingProps) => {
-  const globalStyles = useGlobalStyles();
-
-  return <Text style={[globalStyles.heading, style]}>{children}</Text>;
+  return (
+    <AppText style={style} globalStyleKey="heading">
+      {children}
+    </AppText>
+  );
 };
 
 export default Heading;

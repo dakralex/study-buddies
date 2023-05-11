@@ -1,14 +1,14 @@
 import React from 'react';
-import {Text} from 'react-native';
-import {TextProps} from './NormalText';
-import useGlobalStyles from '../../../styles/Globals';
+import AppText, {TextProps} from '../AppText';
 
 type SmallTextProps = TextProps;
 
 const SmallText = ({style, children}: SmallTextProps) => {
-  const globalStyles = useGlobalStyles();
-
-  return <Text style={[globalStyles.smallText, style]}>{children}</Text>;
+  return (
+    <AppText style={style} globalStyleKey="smallText">
+      {children}
+    </AppText>
+  );
 };
 
 export default SmallText;
