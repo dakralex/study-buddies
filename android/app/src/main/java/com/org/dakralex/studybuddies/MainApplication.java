@@ -1,4 +1,4 @@
-package com.org.dakralex.studybuddies;
+package org.dakralex.studybuddies;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
