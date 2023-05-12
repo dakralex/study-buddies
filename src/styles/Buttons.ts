@@ -47,6 +47,20 @@ const useButtonStyles = () =>
       paddingHorizontal: 10,
       marginRight: 'auto',
     },
+    searchResultItemWrapper: {
+      paddingHorizontal: SCREEN_PADDING_HORIZONTAL,
+      paddingVertical: 12,
+      alignSelf: 'stretch',
+    },
+    searchResultItemContainer: {
+      width: '100%',
+    },
+    searchResultItemContent: {
+      flexDirection: 'column',
+      rowGap: 8,
+      paddingRight: 10,
+      marginRight: 'auto',
+    },
   }));
 
 export default useButtonStyles;

@@ -3,7 +3,7 @@ import AppText, {TextProps} from '../AppText';
 
 type SubheadingProps = TextProps;
 
-const Subheading = ({style, children}: SubheadingProps) => {
+const SubHeading = ({style, children}: SubheadingProps) => {
   return (
     <AppText style={style} globalStyleKey="subHeading">
       {children}
@@ -11,4 +11,4 @@ const Subheading = ({style, children}: SubheadingProps) => {
   );
 };
 
-export default Subheading;
+export default SubHeading;

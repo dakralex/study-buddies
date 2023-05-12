@@ -5,22 +5,23 @@ import {HomeScreenProps as Props} from '../../navigation/types';
 import AppScreen from '../AppScreen';
 import Container from '../../components/atoms/Container';
 import Heading from '../../components/atoms/text/Heading';
-import Subheading from '../../components/atoms/text/Subheading';
-import Subsubheading from '../../components/atoms/text/Subsubheading';
+import SubHeading from '../../components/atoms/text/SubHeading';
+import SubSubHeading from '../../components/atoms/text/SubSubHeading';
 import BoldText from '../../components/atoms/text/BoldText';
 import NormalText from '../../components/atoms/text/NormalText';
 import SmallText from '../../components/atoms/text/SmallText';
 import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
 import SecondaryButton from '../../components/atoms/buttons/SecondaryButton';
 import NotificationItem from '../../components/molecules/NotificationItem';
+import SearchResultItem from '../../components/molecules/SearchResultItem';
 
 const HomeScreen = ({navigation}: Props) => {
   return (
     <AppScreen scroll={true} padded={false}>
       <Container>
         <Heading>Heading</Heading>
-        <Subheading>Subheading</Subheading>
-        <Subsubheading>Subsubheading</Subsubheading>
+        <SubHeading>Subheading</SubHeading>
+        <SubSubHeading>Subsubheading</SubSubHeading>
         <BoldText>Lorem ipsum dolor sit amet.</BoldText>
         <NormalText>Lorem ipsum dolor sit amet.</NormalText>
         <SmallText>Lorem ipsum dolor sit amet.</SmallText>
@@ -55,6 +56,10 @@ const HomeScreen = ({navigation}: Props) => {
         }}>
         Post Notification Item
       </NotificationItem>
+      <SearchResultItem
+        title="SearchResultItem"
+        description="Additional information goes here"
+      />
     </AppScreen>
   );
 };
