@@ -6,31 +6,32 @@ export type TextStyleTypes = keyof ReturnType<typeof useTextStyles>;
 const useTextStyles = () =>
   useStyles(({colorPalette}) => {
     const textDefaults: StyleProp<TextStyle> = {
-      color: colorPalette.foreground,
+      marginBottom: 4,
       fontSize: 16,
       fontWeight: 'normal',
-      marginBottom: 4,
+      color: colorPalette.foreground,
     };
 
     return {
       font: textDefaults,
       heading: {
         ...textDefaults,
+        marginBottom: 10,
         fontSize: 28,
         fontWeight: 'bold',
-        marginBottom: 10,
+        color: colorPalette.primary,
       },
       subHeading: {
         ...textDefaults,
+        marginBottom: 8,
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 8,
       },
       subSubHeading: {
         ...textDefaults,
+        marginBottom: 4,
         fontSize: 18,
         fontWeight: 'bold',
-        marginBottom: 4,
       },
       text: {
         ...textDefaults,

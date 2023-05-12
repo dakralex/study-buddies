@@ -5,16 +5,14 @@ import RootNavigation from './navigation/RootNavigation';
 import {NavigationContainer} from '@react-navigation/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-function App(): JSX.Element {
-  return (
-    <StoreProvider store={store}>
-      <SafeAreaProvider>
-        <NavigationContainer>
-          <RootNavigation />
-        </NavigationContainer>
-      </SafeAreaProvider>
-    </StoreProvider>
-  );
-}
+const App = () => (
+  <StoreProvider store={store}>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <RootNavigation />
+      </NavigationContainer>
+    </SafeAreaProvider>
+  </StoreProvider>
+);
 
 export default App;
