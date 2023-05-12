@@ -27,6 +27,18 @@ const useButtonStyles = () =>
     primaryButtonContent: {
       paddingRight: 6,
     },
+    toggleButtonOnContainer: {
+      paddingVertical: 10,
+      paddingHorizontal: 14,
+      borderRadius: 10,
+      backgroundColor: colorPalette.primary,
+    },
+    toggleButtonOffContainer: {
+      paddingVertical: 10,
+      paddingHorizontal: 14,
+      borderRadius: 10,
+      backgroundColor: colorPalette.secondary,
+    },
     secondaryButtonContainer: {
       paddingVertical: 10,
       borderRadius: 10,
