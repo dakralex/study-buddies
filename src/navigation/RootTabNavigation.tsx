@@ -1,12 +1,12 @@
 import React from 'react';
 import {RootTabParamList} from './types';
+import Icon from '../components/atoms/Icon';
 import HomeScreen from '../screens/RootTab/HomeScreen';
+import useNavigationStyles from '../styles/Navigation';
+import DebugScreen from '../screens/RootTab/DebugScreen';
 import ForumsScreen from '../screens/RootTab/ForumsScreen';
 import CoursesScreen from '../screens/RootTab/CoursesScreen';
-import MessagesScreen from '../screens/RootTab/MessagesScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import useNavigationStyles from '../styles/Navigation';
-import Icon from '../components/atoms/Icon';
 
 const RootTab = createBottomTabNavigator<RootTabParamList>();
 
@@ -18,6 +18,7 @@ const RootTabNavigation = () => {
       id="RootTab"
       initialRouteName="Home"
       screenOptions={{
+        tabBarShowLabel: false,
         tabBarHideOnKeyboard: true,
         headerStyle: navigationStyles.headerContainer,
         headerTitleStyle: navigationStyles.headerText,
@@ -64,19 +65,21 @@ const RootTabNavigation = () => {
           ),
         }}
       />
-      <RootTab.Screen
-        name="Messages"
-        component={MessagesScreen}
-        options={{
-          tabBarIcon: ({focused, color, size}) => (
-            <Icon
-              name={focused ? 'chatbox' : 'chatbox-outline'}
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
+      {
+        <RootTab.Screen
+          name="Debug"
+          component={DebugScreen}
+          options={{
+            tabBarIcon: ({focused, color, size}) => (
+              <Icon
+                name={focused ? 'bug' : 'bug-outline'}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+      }
     </RootTab.Navigator>
   );
 };
