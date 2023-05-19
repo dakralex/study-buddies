@@ -1,18 +1,17 @@
 import React from 'react';
+import {View} from 'react-native';
+import Icon from '../atoms/Icon';
 import AppIconButton from '../atoms/AppIconButton';
 import {AppButtonProps} from '../atoms/AppButton';
-import Icon from '../atoms/Icon';
 import useButtonStyles from '../../styles/Buttons';
 import NormalText from '../atoms/text/NormalText';
+import SubSubHeading from '../atoms/text/SubSubHeading';
+import {Notification} from '../../features/notifications/types';
 
-type NotificationType = 'message' | 'post';
-
-type NotificationItemProps = AppButtonProps & {
-  type: NotificationType;
-};
+type NotificationItemProps = AppButtonProps & Notification;
 
 const NotificationItem = (props: NotificationItemProps) => {
-  const {type, children} = props;
+  const {type, title, message} = props;
   const buttonStyles = useButtonStyles();
 
   return (
@@ -26,7 +25,12 @@ const NotificationItem = (props: NotificationItemProps) => {
         color={buttonStyles.buttonIcon.color}
       />
       <NormalText style={buttonStyles.notificationItemContent}>
-        {children}
+        <View>
+          <SubSubHeading>{title}</SubSubHeading>
+        </View>
+        <View>
+          <NormalText>{message}</NormalText>
+        </View>
       </NormalText>
     </AppIconButton>
   );
