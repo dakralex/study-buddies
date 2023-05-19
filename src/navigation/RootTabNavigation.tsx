@@ -6,7 +6,7 @@ import useNavigationStyles from '../styles/Navigation';
 import DebugScreen from '../screens/RootTab/DebugScreen';
 import CoursesStackNavigation from './CoursesStackNavigation';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import ForumsOverviewScreen from '../screens/RootTab/ForumsOverviewScreen';
+import ForumsStackNavigation from './ForumsStackNavigation';
 
 const RootTab = createBottomTabNavigator<RootTabParamList>();
 
@@ -54,7 +54,7 @@ const RootTabNavigation = () => {
       />
       <RootTab.Screen
         name="Forums"
-        component={ForumsOverviewScreen}
+        component={ForumsStackNavigation}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <Icon
