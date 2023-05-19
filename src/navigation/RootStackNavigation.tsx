@@ -2,12 +2,12 @@ import React from 'react';
 import {RootStackParamList} from './types';
 import RootTabNavigation from './RootTabNavigation';
 import ProfileScreen from '../screens/RootStack/ProfileScreen';
-import NotificationsScreen from '../screens/RootStack/NotificationsScreen';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import NotificationsScreen from '../screens/RootStack/NotificationsScreen';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
-const RootNavigation = () => {
+const RootStackNavigation = () => {
   return (
     <RootStack.Navigator
       id="RootStack"
@@ -20,4 +20,4 @@ const RootNavigation = () => {
   );
 };
 
-export default RootNavigation;
+export default RootStackNavigation;

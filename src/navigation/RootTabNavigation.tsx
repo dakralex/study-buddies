@@ -4,9 +4,9 @@ import Icon from '../components/atoms/Icon';
 import HomeScreen from '../screens/RootTab/HomeScreen';
 import useNavigationStyles from '../styles/Navigation';
 import DebugScreen from '../screens/RootTab/DebugScreen';
-import ForumsScreen from '../screens/RootTab/ForumsScreen';
-import CoursesScreen from '../screens/RootTab/CoursesScreen';
+import CoursesStackNavigation from './CoursesStackNavigation';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import ForumsOverviewScreen from '../screens/RootTab/ForumsOverviewScreen';
 
 const RootTab = createBottomTabNavigator<RootTabParamList>();
 
@@ -41,7 +41,7 @@ const RootTabNavigation = () => {
       />
       <RootTab.Screen
         name="Courses"
-        component={CoursesScreen}
+        component={CoursesStackNavigation}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <Icon
@@ -54,7 +54,7 @@ const RootTabNavigation = () => {
       />
       <RootTab.Screen
         name="Forums"
-        component={ForumsScreen}
+        component={ForumsOverviewScreen}
         options={{
           tabBarIcon: ({focused, color, size}) => (
             <Icon
