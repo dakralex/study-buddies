@@ -8,24 +8,7 @@ import NormalText from '../../components/atoms/text/NormalText';
 import {Notifications} from '../../features/notifications/types';
 import NotificationList from '../../components/organisms/NotificationList';
 import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
-
-const PROTOTYPE_NOTIFICATIONS: Notifications = [
-  {
-    type: 'message',
-    title: 'Neue Nachricht von Flora',
-    message: 'Hey du, ich suche gerade nach einer Lern...',
-  },
-  {
-    type: 'post',
-    title: 'Neue Antwort auf deinen Post',
-    message: 'Hää, warum machst du dabei nicht einf...',
-  },
-  {
-    type: 'post',
-    title: 'Neuer Post in Politische Philosophie',
-    message: 'Kennt sich jmd mit dem Zusammenhang...',
-  },
-];
+import {PROTOTYPE_NOTIFICATIONS} from '../RootStack/NotificationsScreen';
 
 const HomeScreen = ({navigation}: Props) => {
   return (
@@ -36,7 +19,7 @@ const HomeScreen = ({navigation}: Props) => {
           Das sind deine neuesten Ereignisse auf StudyBuddies!
         </NormalText>
       </Container>
-      <NotificationList notifications={PROTOTYPE_NOTIFICATIONS} />
+      <NotificationList notifications={PROTOTYPE_NOTIFICATIONS.slice(0, 3)} />
       <Container>
         <PrimaryButton
           onPress={() => {
