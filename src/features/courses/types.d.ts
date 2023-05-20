@@ -6,6 +6,7 @@ export type Course = {
   module: string;
   study: string;
   description: string;
+  mentis_ids: Array<string>;
   forum_id: string | keyof PROTOTYPE_FORUMS;
 };
 
