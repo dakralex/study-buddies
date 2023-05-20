@@ -5,10 +5,9 @@ import AppScreen from '../AppScreen';
 import Container from '../../components/atoms/Container';
 import Heading from '../../components/atoms/text/Heading';
 import NormalText from '../../components/atoms/text/NormalText';
-import {Notifications} from '../../features/notifications/types';
 import NotificationList from '../../components/organisms/NotificationList';
 import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
-import {PROTOTYPE_NOTIFICATIONS} from '../RootStack/NotificationsScreen';
+import {PROTOTYPE_NOTIFICATIONS} from '../../features/notifications/notifications';
 
 const HomeScreen = ({navigation}: Props) => {
   return (
