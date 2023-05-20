@@ -6,6 +6,7 @@ import {Notifications} from '../../features/notifications/types';
 type NotificationListProps = {
   notifications: Notifications;
 };
+
 const NotificationList = ({notifications}: NotificationListProps) => {
   return (
     <FlatList

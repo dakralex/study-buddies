@@ -13,11 +13,11 @@ const ForumOverviewList = ({forums}: ForumOverviewListProps) => {
   return (
     <FlatList
       style={styles.forumListContainer}
-      data={forums}
+      data={Object.values(forums)}
       renderItem={({item: forums}) => (
         <SearchResultItem
           title={forums.title}
-          description={forums.posts}
+          description={`${Object.values(forums.posts).length} Posts`}
           onPress={() => {
             navigation.navigate('ForumsDetails', {
               id: forums.id,
