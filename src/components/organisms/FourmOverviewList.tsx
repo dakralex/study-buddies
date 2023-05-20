@@ -20,7 +20,7 @@ const ForumOverviewList = ({forums}: ForumOverviewListProps) => {
           description={`${Object.values(forums.posts).length} Posts`}
           onPress={() => {
             navigation.navigate('ForumsDetails', {
-              id: forums.id,
+              forumId: forums.id,
             });
           }}
         />
