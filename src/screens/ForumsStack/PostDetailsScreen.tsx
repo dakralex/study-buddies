@@ -13,11 +13,12 @@ const PostDetailsScreen = ({route}: Props) => {
     params: {postId, forumId},
   } = route;
   const forum = PROTOTYPE_FORUMS[forumId];
-  const post = forum.posts[postId];
+  const post = forum?.posts[postId];
+
   return (
     <AppScreen scroll={false} padded={false}>
       {!post ? (
-        <NormalText>Der Post konnte nicht gefunden werden!</NormalText>
+        <NormalText>Der Post konnte nicht gefunden werden.</NormalText>
       ) : (
         <Container>
           <FullPostItem post={post} />

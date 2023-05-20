@@ -9,11 +9,11 @@ import {CoursesOverviewScreenProps as Props} from '../../navigation/types';
 
 const CoursesOverviewScreen = ({}: Props) => {
   return (
-    <AppScreen scroll={false} padded={false}>
+    <AppScreen padded={false}>
       <Container>
         <Heading>Deine Kurse</Heading>
-        <CourseList courses={PROTOTYPE_COURSES} />
       </Container>
+      <CourseList courses={PROTOTYPE_COURSES} />
     </AppScreen>
   );
 };
