@@ -1,8 +1,9 @@
 import React from 'react';
-import {Posts} from '../../features/forums/types';
-import {useNavigation} from '@react-navigation/native';
-import {FlatList, StyleSheet} from 'react-native';
 import PostItem from '../molecules/PostItem';
+import {FlatList, StyleSheet} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+
+import {Posts} from '../../features/forums/types';
 
 type PostListProps = {
   posts: Posts;
@@ -11,16 +12,17 @@ type PostListProps = {
 
 const PostItemList = ({posts, forumId}: PostListProps) => {
   const navigation = useNavigation();
+
   return (
     <FlatList
       style={styles.postListContainer}
       data={Object.values(posts)}
-      renderItem={({item: posts}) => (
+      renderItem={({item: post}) => (
         <PostItem
-          post={posts}
+          post={post}
           onPress={() => {
             navigation.navigate('PostDetails', {
-              postId: posts.id,
+              postId: post.id,
               forumId: forumId,
             });
           }}

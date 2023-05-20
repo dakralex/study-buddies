@@ -1,7 +1,8 @@
 import React from 'react';
-import {Posts} from '../../features/forums/types';
 import {FlatList, StyleSheet} from 'react-native';
 import FullPostItem from '../molecules/FullPostItem';
+
+import {Posts} from '../../features/forums/types';
 
 type FullPostListProps = {
   posts: Posts;
@@ -12,7 +13,7 @@ const FullPostItemList = ({posts}: FullPostListProps) => {
     <FlatList
       style={styles.postListContainer}
       data={Object.values(posts)}
-      renderItem={({item: posts}) => <FullPostItem post={posts} />}
+      renderItem={({item: post}) => <FullPostItem post={post} />}
     />
   );
 };

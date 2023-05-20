@@ -1,8 +1,9 @@
 import React from 'react';
-import {AppButtonProps} from '../atoms/AppButton';
-import {Course} from '../../features/courses/types';
 import SearchResultItem from './SearchResultItem';
 import {useNavigation} from '@react-navigation/native';
+
+import {AppButtonProps} from '../atoms/AppButton';
+import {Course} from '../../features/courses/types';
 
 type CourseItemProps = AppButtonProps & {
   course: Course;
@@ -10,9 +11,7 @@ type CourseItemProps = AppButtonProps & {
 
 const CourseItem = (props: CourseItemProps) => {
   const navigation = useNavigation();
-  const {
-    course: {id, title, mentis_ids},
-  } = props;
+  const {id, title, mentis_ids} = props.course;
 
   return (
     <SearchResultItem

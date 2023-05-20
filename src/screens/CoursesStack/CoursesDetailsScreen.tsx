@@ -1,27 +1,22 @@
 import React, {useState} from 'react';
-import AppScreen from '../AppScreen';
-import {CoursesDetailsScreenProps as Props} from '../../navigation/types';
-import NormalText from '../../components/atoms/text/NormalText';
-import {PROTOTYPE_COURSES} from '../../features/courses/courses';
-import Heading from '../../components/atoms/text/Heading';
-import SubHeading from '../../components/atoms/text/SubHeading';
-import SubSubHeading from '../../components/atoms/text/SubSubHeading';
-import Container from '../../components/atoms/Container';
-import HorizontalView from '../../components/atoms/HorizontalView';
-import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
-import navigation from '../../styles/Navigation';
-import ToggleButton from '../../components/molecules/ToggleButton';
 import {View} from 'react-native';
+import AppScreen from '../AppScreen';
+import Container from '../../components/atoms/Container';
+import Heading from '../../components/atoms/text/Heading';
+import NormalText from '../../components/atoms/text/NormalText';
+import SubHeading from '../../components/atoms/text/SubHeading';
+import HorizontalView from '../../components/atoms/HorizontalView';
+import ToggleButton from '../../components/molecules/ToggleButton';
+import SubSubHeading from '../../components/atoms/text/SubSubHeading';
+import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
 
-const CoursesDetailsScreen = ({route}: Props) => {
-  const {
-    params: {courseId},
-  } = route;
+import {PROTOTYPE_COURSES} from '../../features/courses/courses';
+import {CoursesDetailsScreenProps as Props} from '../../navigation/types';
+
+const CoursesDetailsScreen = ({navigation, route}: Props) => {
+  const {courseId} = route.params;
   const course = PROTOTYPE_COURSES[courseId];
-
   const [toggleButtonState, setToggleButtonState] = useState(true);
-
-  //console.log('AAAAA', courseId);
 
   return (
     <AppScreen scroll={false} padded={false}>
@@ -34,7 +29,7 @@ const CoursesDetailsScreen = ({route}: Props) => {
           <SubHeading>{course.title}</SubHeading>
           <NormalText>{course.description}</NormalText>
           <View style={{paddingTop: 10}}>
-            <Heading>Mentis:</Heading>
+            <Heading>Mentees</Heading>
           </View>
           <HorizontalView>
             <SubHeading>BLAHAAAAAAA</SubHeading>
@@ -47,16 +42,18 @@ const CoursesDetailsScreen = ({route}: Props) => {
           <HorizontalView>
             <PrimaryButton
               onPress={() => {
-                //Zum jeweiligen Forum springen
-                navigation.navigate(course.forum_id);
+                // Zum jeweiligen Forum springen
+                navigation.navigate('ForumDetails', {
+                  forumId: course.forum_id,
+                });
               }}>
               Forum
             </PrimaryButton>
             <ToggleButton
               state={toggleButtonState}
               setState={setToggleButtonState}
-              stateOnText="Als Menti registrieren"
-              stateOffText="Als Menti entfernen"
+              stateOnText="Als Mentee registrieren"
+              stateOffText="Als Mentee entfernen"
             />
           </HorizontalView>
         </Container>

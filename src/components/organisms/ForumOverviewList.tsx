@@ -1,8 +1,9 @@
 import React from 'react';
-import SearchResultItem from '../molecules/SearchResultItem';
-import {Forums} from '../../features/forums/types';
 import {FlatList, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+
+import {Forums} from '../../features/forums/types';
+import SearchResultItem from '../molecules/SearchResultItem';
 
 type ForumOverviewListProps = {
   forums: Forums;
@@ -10,17 +11,18 @@ type ForumOverviewListProps = {
 
 const ForumOverviewList = ({forums}: ForumOverviewListProps) => {
   const navigation = useNavigation();
+
   return (
     <FlatList
       style={styles.forumListContainer}
       data={Object.values(forums)}
-      renderItem={({item: forums}) => (
+      renderItem={({item: forum}) => (
         <SearchResultItem
-          title={forums.title}
-          description={`${Object.values(forums.posts).length} Posts`}
+          title={forum.title}
+          description={`${Object.values(forum.posts).length} Posts`}
           onPress={() => {
             navigation.navigate('ForumsDetails', {
-              forumId: forums.id,
+              forumId: forum.id,
             });
           }}
         />

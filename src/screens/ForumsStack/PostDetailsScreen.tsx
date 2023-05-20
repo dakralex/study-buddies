@@ -1,11 +1,12 @@
 import React from 'react';
 import AppScreen from '../AppScreen';
-import {PostDetailsScreenProps as Props} from '../../navigation/types';
-import {PROTOTYPE_FORUMS} from '../../features/forums/forums';
-import NormalText from '../../components/atoms/text/NormalText';
 import Container from '../../components/atoms/Container';
-import FullPostItemList from '../../components/organisms/FullPostItemList';
+import NormalText from '../../components/atoms/text/NormalText';
 import FullPostItem from '../../components/molecules/FullPostItem';
+import FullPostItemList from '../../components/organisms/FullPostItemList';
+
+import {PROTOTYPE_FORUMS} from '../../features/forums/forums';
+import {PostDetailsScreenProps as Props} from '../../navigation/types';
 
 const PostDetailsScreen = ({route}: Props) => {
   const {

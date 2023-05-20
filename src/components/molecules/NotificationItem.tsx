@@ -2,10 +2,11 @@ import React from 'react';
 import {View} from 'react-native';
 import Icon from '../atoms/Icon';
 import AppIconButton from '../atoms/AppIconButton';
-import {AppButtonProps} from '../atoms/AppButton';
 import useButtonStyles from '../../styles/Buttons';
 import NormalText from '../atoms/text/NormalText';
 import SubSubHeading from '../atoms/text/SubSubHeading';
+
+import {AppButtonProps} from '../atoms/AppButton';
 import {Notification} from '../../features/notifications/types';
 
 type NotificationItemProps = AppButtonProps & Notification;
