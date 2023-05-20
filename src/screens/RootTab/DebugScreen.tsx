@@ -77,6 +77,9 @@ const DebugScreen = ({navigation}: Props) => {
       <SearchResultItem
         title="SearchResultItem"
         description="Additional information goes here"
+        onPress={() => {
+          navigation.navigate('Forums');
+        }}
       />
       <Container>
         <NormalText>Test</NormalText>
