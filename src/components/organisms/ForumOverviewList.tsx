@@ -3,6 +3,7 @@ import {FlatList, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import {Forums} from '../../features/forums/types';
+import {AppNavigation} from '../../navigation/types';
 import SearchResultItem from '../molecules/SearchResultItem';
 
 type ForumOverviewListProps = {
@@ -10,7 +11,7 @@ type ForumOverviewListProps = {
 };
 
 const ForumOverviewList = ({forums}: ForumOverviewListProps) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<AppNavigation>();
 
   return (
     <FlatList

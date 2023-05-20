@@ -4,6 +4,7 @@ import {FlatList, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import {Posts} from '../../features/forums/types';
+import {AppNavigation} from '../../navigation/types';
 
 type PostListProps = {
   posts: Posts;
@@ -11,7 +12,7 @@ type PostListProps = {
 };
 
 const PostItemList = ({posts, forumId}: PostListProps) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<AppNavigation>();
 
   return (
     <FlatList

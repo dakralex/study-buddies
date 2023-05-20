@@ -1,9 +1,16 @@
 import {
+  CompositeNavigationProp,
   CompositeScreenProps,
   NavigatorScreenParams,
 } from '@react-navigation/native';
-import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {
+  BottomTabNavigationProp,
+  BottomTabScreenProps,
+} from '@react-navigation/bottom-tabs';
+import {
+  NativeStackNavigationProp,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 
 /**                                                                          **/
 /**                         NAVIGATION PARAM LISTS                           **/
@@ -60,6 +67,29 @@ export type ForumsStackScreenProps<T extends keyof ForumsStackParamList> =
     NativeStackScreenProps<ForumsStackParamList, T>,
     RootTabScreenProps<keyof RootTabParamList>
   >;
+
+export type RootStackNavigationProp =
+  NativeStackNavigationProp<RootStackParamList>;
+
+export type RootTabNavigationProp = CompositeNavigationProp<
+  BottomTabNavigationProp<RootTabParamList>,
+  RootStackNavigationProp
+>;
+
+export type CoursesStackNavigationProp = CompositeNavigationProp<
+  NativeStackNavigationProp<CoursesStackParamList>,
+  RootTabNavigationProp
+>;
+
+export type ForumsStackNavigationProp = CompositeNavigationProp<
+  NativeStackNavigationProp<CoursesStackParamList>,
+  RootTabNavigationProp
+>;
+
+export type AppNavigation = CompositeNavigationProp<
+  CoursesStackNavigationProp,
+  ForumsStackNavigationProp
+>;
 
 export type ProfileScreenProps = RootStackScreenProps<'Profile'>;
 export type NotificationsScreenProps = RootStackScreenProps<'Notifications'>;
