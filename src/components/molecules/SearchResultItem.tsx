@@ -12,11 +12,12 @@ type SearchResultItemProps = AppButtonProps & {
 };
 
 const SearchResultItem = (props: SearchResultItemProps) => {
-  const {title, description} = props;
+  const {onPress, title, description} = props;
   const buttonStyles = useButtonStyles();
 
   return (
     <AppIconButton
+      onPress={onPress}
       wrapperStyle={buttonStyles.searchResultItemWrapper}
       containerStyle={buttonStyles.searchResultItemContainer}>
       <View style={buttonStyles.searchResultItemContent}>
