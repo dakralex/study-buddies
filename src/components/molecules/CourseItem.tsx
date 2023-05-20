@@ -20,7 +20,7 @@ const CourseItem = (props: CourseItemProps) => {
       description={`${mentis_ids.length} Mentis`}
       onPress={() => {
         navigation.navigate('CourseDetails', {
-          id: id,
+          courseId: id,
         });
       }}
     />

@@ -8,7 +8,7 @@ export const PROTOTYPE_COURSES: Courses = {
     study: 'BA Informatik',
     mentis_ids: [],
     description:
-      'In dieser Lehrveranstaltung werden die wichtigsten Konzepte und Ideen moderner Betriebssysteme in vereinfachter Form gelehrt. Der Vortragende, Edgar Weippl, inst grundsätzlich sehr sympathisch, aber er beantwortet eher ungern Fragen (da der Stoff so dicht ist) und verlangt mehr oder weniger auch, dass man das Buch zur Vorlesung mitliest.',
+      'In dieser Lehrveranstaltung werden die wichtigsten Konzepte und Ideen moderner Betriebssysteme in vereinfachter Form gelehrt. Der Vortragende, Edgar Weippl, ist grundsätzlich sehr sympathisch, aber er beantwortet eher ungern Fragen (da der Stoff so dicht ist) und verlangt mehr oder weniger auch, dass man das Buch zur Vorlesung mitliest.',
     forum_id: '753fb11a-398f-45b3-bb88-450dde4b93ad',
   },
   '051022': {
