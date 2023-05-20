@@ -11,7 +11,7 @@ import {PROTOTYPE_NOTIFICATIONS} from '../../features/notifications/notification
 
 const HomeScreen = ({navigation}: Props) => {
   return (
-    <AppScreen scroll={false} padded={false}>
+    <AppScreen padded={false}>
       <Container>
         <Heading>Servus, Alaine!</Heading>
         <NormalText>

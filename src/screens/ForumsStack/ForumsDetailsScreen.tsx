@@ -13,9 +13,11 @@ const ForumsDetailsScreen = ({route}: Props) => {
   const forum = PROTOTYPE_FORUMS[forumId];
 
   return (
-    <AppScreen scroll={false} padded={false}>
+    <AppScreen padded={false}>
       {!forum ? (
-        <NormalText>Das Forum konnte nicht gefunden werden.</NormalText>
+        <Container>
+          <NormalText>Das Forum konnte nicht gefunden werden.</NormalText>
+        </Container>
       ) : (
         <React.Fragment>
           <Container>

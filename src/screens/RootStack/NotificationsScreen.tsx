@@ -8,7 +8,7 @@ import {PROTOTYPE_NOTIFICATIONS} from '../../features/notifications/notification
 
 const NotificationsScreen = ({}: Props) => {
   return (
-    <AppScreen scroll={false} padded={false}>
+    <AppScreen padded={false}>
       <Container>
         <Heading>Deine Benachrichtigungen</Heading>
       </Container>

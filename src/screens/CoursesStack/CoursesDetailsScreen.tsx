@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import AppScreen from '../AppScreen';
-import Container from '../../components/atoms/Container';
 import Heading from '../../components/atoms/text/Heading';
 import NormalText from '../../components/atoms/text/NormalText';
 import SubHeading from '../../components/atoms/text/SubHeading';
@@ -19,11 +18,11 @@ const CoursesDetailsScreen = ({navigation, route}: Props) => {
   const [toggleButtonState, setToggleButtonState] = useState(true);
 
   return (
-    <AppScreen scroll={false} padded={false}>
+    <AppScreen>
       {!course ? (
         <NormalText>Der Kurs konnte nicht gefunden werden.</NormalText>
       ) : (
-        <Container>
+        <React.Fragment>
           <SubSubHeading>{course.study}</SubSubHeading>
           <Heading>{course.module}</Heading>
           <SubHeading>{course.title}</SubHeading>
@@ -56,7 +55,7 @@ const CoursesDetailsScreen = ({navigation, route}: Props) => {
               stateOffText="Als Mentee entfernen"
             />
           </HorizontalView>
-        </Container>
+        </React.Fragment>
       )}
     </AppScreen>
   );
