@@ -18,8 +18,8 @@ export type RootStackParamList = {
 
 export type RootTabParamList = {
   Home: undefined;
-  Courses: undefined;
-  Forums: undefined;
+  Courses: NavigatorScreenParams<CoursesStackParamList>;
+  Forums: NavigatorScreenParams<ForumsStackParamList>;
   Debug: undefined;
   //  Messages: undefined;
 };
@@ -27,7 +27,6 @@ export type RootTabParamList = {
 export type CoursesStackParamList = {
   CoursesOverview: undefined;
   CourseDetails: {courseId: string};
-  CourseCreate: undefined;
 };
 
 export type ForumsStackParamList = {
@@ -66,8 +65,6 @@ export type ProfileScreenProps = RootStackScreenProps<'Profile'>;
 export type NotificationsScreenProps = RootStackScreenProps<'Notifications'>;
 
 export type HomeScreenProps = RootTabScreenProps<'Home'>;
-export type CoursesScreenProps = RootTabScreenProps<'Courses'>;
-export type ForumsScreenProps = RootTabScreenProps<'Forums'>;
 export type DebugScreenProps = RootTabScreenProps<'Debug'>;
 export type MessagesScreenProps = RootTabScreenProps<'Messages'>;
 
@@ -75,7 +72,6 @@ export type CoursesOverviewScreenProps =
   CoursesStackScreenProps<'CoursesOverview'>;
 export type CoursesDetailsScreenProps =
   CoursesStackScreenProps<'CourseDetails'>;
-export type CoursesCreateScreenProps = CoursesStackScreenProps<'CourseCreate'>;
 
 export type ForumsOverviewScreenProps =
   ForumsStackScreenProps<'ForumsOverview'>;
