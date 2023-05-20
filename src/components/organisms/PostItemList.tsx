@@ -6,9 +6,10 @@ import PostItem from '../molecules/PostItem';
 
 type PostListProps = {
   posts: Posts;
+  forumId: String;
 };
 
-const PostItemList = ({posts}: PostListProps) => {
+const PostItemList = ({posts, forumId}: PostListProps) => {
   const navigation = useNavigation();
   return (
     <FlatList
@@ -18,8 +19,9 @@ const PostItemList = ({posts}: PostListProps) => {
         <PostItem
           post={posts}
           onPress={() => {
-            navigation.navigate('PostDetail', {
-              id: posts.id,
+            navigation.navigate('PostDetails', {
+              postId: posts.id,
+              forumId: forumId,
             });
           }}
         />

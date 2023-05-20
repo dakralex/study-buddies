@@ -32,7 +32,7 @@ export type CoursesStackParamList = {
 export type ForumsStackParamList = {
   ForumsOverview: undefined;
   ForumsDetails: {forumId: string};
-  PostDetails: {postId: string};
+  PostDetails: {forumId: string; postId: string};
   PostCreate: undefined;
 };
 

@@ -19,7 +19,7 @@ const ForumsDetailsScreen = ({route}: Props) => {
       ) : (
         <Container>
           <Heading> {forum.title} </Heading>
-          <PostItemList posts={forum.posts} />
+          <PostItemList forumId={forum.id} posts={forum.posts} />
         </Container>
       )}
     </AppScreen>
