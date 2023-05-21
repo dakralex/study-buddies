@@ -1,44 +1,54 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
 import AppScreen from '../AppScreen';
 import Heading from '../../components/atoms/text/Heading';
 import NormalText from '../../components/atoms/text/NormalText';
-import SubHeading from '../../components/atoms/text/SubHeading';
-import HorizontalView from '../../components/atoms/HorizontalView';
 import ToggleButton from '../../components/molecules/ToggleButton';
-import SubSubHeading from '../../components/atoms/text/SubSubHeading';
 import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
 
+import {PROTOTYPE_USERS} from '../../features/users/users';
 import {PROTOTYPE_COURSES} from '../../features/courses/courses';
 import {CoursesDetailsScreenProps as Props} from '../../navigation/types';
+import UserAvatarSlider from '../../components/organisms/UserAvatarSlider';
+import SubHeading from '../../components/atoms/text/SubHeading';
+import Container from '../../components/atoms/Container';
 
 const CoursesDetailsScreen = ({navigation, route}: Props) => {
   const {courseId} = route.params;
+  const users = PROTOTYPE_USERS;
   const course = PROTOTYPE_COURSES[courseId];
   const [toggleButtonState, setToggleButtonState] = useState(true);
 
+  const mentees = course.mentee_ids.reduce((obj, key) => {
+    if (PROTOTYPE_USERS && PROTOTYPE_USERS.hasOwnProperty(key)) {
+      obj[key] = PROTOTYPE_USERS[key];
+    }
+    return obj;
+  }, {});
+
   return (
-    <AppScreen>
+    <AppScreen padded={false}>
       {!course ? (
         <NormalText>Der Kurs konnte nicht gefunden werden.</NormalText>
       ) : (
         <React.Fragment>
-          <SubSubHeading>{course.study}</SubSubHeading>
-          <Heading>{course.module}</Heading>
-          <SubHeading>{course.title}</SubHeading>
-          <NormalText>{course.description}</NormalText>
-          <View style={{paddingTop: 10}}>
-            <Heading>Mentees</Heading>
-          </View>
-          <HorizontalView>
-            <SubHeading>BLAHAAAAAAA</SubHeading>
-            <SubHeading>BLAHBBBBBBB</SubHeading>
-            <SubHeading>BLAHCCCCCCC</SubHeading>
-            <SubHeading>BLAHDDDDDDD</SubHeading>
-            <SubHeading>BLAHEEEEEEE</SubHeading>
-          </HorizontalView>
-
-          <HorizontalView>
+          <Container>
+            <Heading>{course.title}</Heading>
+            <NormalText>{course.description}</NormalText>
+            <SubHeading
+              style={{
+                paddingVertical: 16,
+              }}>
+              Mentees
+            </SubHeading>
+          </Container>
+          <UserAvatarSlider users={mentees} />
+          <Container>
+            <ToggleButton
+              state={toggleButtonState}
+              setState={setToggleButtonState}
+              stateOnText="Als Mentee registrieren"
+              stateOffText="Als Mentee entfernen"
+            />
             <PrimaryButton
               onPress={() => {
                 // Zum jeweiligen Forum springen
@@ -48,13 +58,7 @@ const CoursesDetailsScreen = ({navigation, route}: Props) => {
               }}>
               Forum
             </PrimaryButton>
-            <ToggleButton
-              state={toggleButtonState}
-              setState={setToggleButtonState}
-              stateOnText="Als Mentee registrieren"
-              stateOffText="Als Mentee entfernen"
-            />
-          </HorizontalView>
+          </Container>
         </React.Fragment>
       )}
     </AppScreen>
