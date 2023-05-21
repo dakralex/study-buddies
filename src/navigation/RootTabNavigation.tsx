@@ -3,7 +3,6 @@ import {RootTabParamList} from './types';
 import Icon from '../components/atoms/Icon';
 import HomeScreen from '../screens/RootTab/HomeScreen';
 import useNavigationStyles from '../styles/Navigation';
-import DebugScreen from '../screens/RootTab/DebugScreen';
 import CoursesStackNavigation from './CoursesStackNavigation';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import ForumsStackNavigation from './ForumsStackNavigation';
@@ -66,21 +65,6 @@ const RootTabNavigation = () => {
           ),
         }}
       />
-      {
-        <RootTab.Screen
-          name="Debug"
-          component={DebugScreen}
-          options={{
-            tabBarIcon: ({focused, color, size}) => (
-              <Icon
-                name={focused ? 'bug' : 'bug-outline'}
-                size={size}
-                color={color}
-              />
-            ),
-          }}
-        />
-      }
     </RootTab.Navigator>
   );
 };

@@ -1,8 +1,8 @@
 import {FixedColorPalette, ThemedPalette} from './types';
 
 const fixedColors: FixedColorPalette = {
-  primary: '#FD5200',
-  secondary: '#AF3800',
+  primary: '#EF6C35',
+  secondary: '#F98903',
   red: '#F09583', // Dark Salmon
   yellow: '#F0E683', // Khaki
   green: '#B1F083', // Yellow-Green
@@ -16,14 +16,14 @@ const fixedColors: FixedColorPalette = {
 const Colors: ThemedPalette = {
   dark: {
     ...fixedColors,
-    background: '#0F0A0A',
+    background: '#161C2E',
     foreground: '#F1EEE4',
-    gray: '#454545',
+    gray: '#283253',
   },
   light: {
     ...fixedColors,
     background: '#F1EEE4',
-    foreground: '#0F0A0A',
+    foreground: '#161C2E',
     gray: '#BABABA',
   },
 };

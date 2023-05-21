@@ -27,7 +27,6 @@ export type RootTabParamList = {
   Home: undefined;
   Courses: NavigatorScreenParams<CoursesStackParamList>;
   Forums: NavigatorScreenParams<ForumsStackParamList>;
-  Debug: undefined;
   //  Messages: undefined;
 };
 
@@ -95,7 +94,6 @@ export type ProfileScreenProps = RootStackScreenProps<'Profile'>;
 export type NotificationsScreenProps = RootStackScreenProps<'Notifications'>;
 
 export type HomeScreenProps = RootTabScreenProps<'Home'>;
-export type DebugScreenProps = RootTabScreenProps<'Debug'>;
 export type MessagesScreenProps = RootTabScreenProps<'Messages'>;
 
 export type CoursesOverviewScreenProps =
