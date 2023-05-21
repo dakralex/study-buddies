@@ -57,7 +57,7 @@ export const PROTOTYPE_COURSES: Courses = {
       '\n' +
       'Voraussetzungen:\n' +
       'Grundlegende Kenntnisse in Modellierung und in Algorithmen und Datenstrukturen werden angenommen. Eventuell fehlende Kenntnisse sind im Selbststudium relativ einfach nachzuholen.',
-    forum_id: '0305c3b4-654b-493e-ae5e-d27d8e3f96bc',
+    forum_id: '71373eba-672a-4c2b-bca4-3d49cad01b12',
   },
   '051039': {
     id: '051039',
