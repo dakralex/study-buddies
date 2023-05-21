@@ -11,6 +11,8 @@ import {CoursesDetailsScreenProps as Props} from '../../navigation/types';
 import UserAvatarSlider from '../../components/organisms/UserAvatarSlider';
 import SubHeading from '../../components/atoms/text/SubHeading';
 import Container from '../../components/atoms/Container';
+import {View} from 'react-native';
+import SubSubHeading from '../../components/atoms/text/SubSubHeading';
 
 const CoursesDetailsScreen = ({navigation, route}: Props) => {
   const {courseId} = route.params;
@@ -26,38 +28,45 @@ const CoursesDetailsScreen = ({navigation, route}: Props) => {
   }, {});
 
   return (
-    <AppScreen padded={false}>
+    <AppScreen padded={false} scroll={true}>
       {!course ? (
         <NormalText>Der Kurs konnte nicht gefunden werden.</NormalText>
       ) : (
         <React.Fragment>
           <Container>
+            <SubSubHeading>{course.study}</SubSubHeading>
             <Heading>{course.title}</Heading>
             <NormalText>{course.description}</NormalText>
+          </Container>
+          <Container>
+            <View style={{paddingTop: 8, paddingBottom: 4}}>
+              <PrimaryButton
+                onPress={() => {
+                  // Zum jeweiligen Forum springen
+                  navigation.navigate('ForumsDetails', {
+                    forumId: course.forum_id,
+                  });
+                }}>
+                Forum
+              </PrimaryButton>
+            </View>
             <SubHeading
               style={{
-                paddingVertical: 16,
+                paddingVertical: 10,
               }}>
               Mentees
             </SubHeading>
           </Container>
           <UserAvatarSlider users={mentees} />
           <Container>
-            <ToggleButton
-              state={toggleButtonState}
-              setState={setToggleButtonState}
-              stateOnText="Als Mentee registrieren"
-              stateOffText="Als Mentee entfernen"
-            />
-            <PrimaryButton
-              onPress={() => {
-                // Zum jeweiligen Forum springen
-                navigation.navigate('ForumDetails', {
-                  forumId: course.forum_id,
-                });
-              }}>
-              Forum
-            </PrimaryButton>
+            <View style={{paddingTop: 16, paddingBottom: 24}}>
+              <ToggleButton
+                state={toggleButtonState}
+                setState={setToggleButtonState}
+                stateOnText="Als Mentee registrieren"
+                stateOffText="Als Mentee entfernen"
+              />
+            </View>
           </Container>
         </React.Fragment>
       )}

@@ -37,7 +37,26 @@ export const PROTOTYPE_COURSES: Courses = {
       'dafc64a5-dbf9-48da-95bb-f006899eae37',
       'd52cc86e-9f83-4f7b-a275-7c09949e67d1',
     ],
-    description: 'In',
+    description:
+      'Absolventen der Lehrveranstaltung verstehen die grundlegenden Funktionsweisen von Datenbanksystemen, können Datenbanken entwerfen und abfragen, können Datenbanksysteme für die Erstellung von Anwendungssystemen einsetzen und in Programme einbinden, kennen die theoretischen Grundlagen der relationalen Datenbanken, verstehen die Probleme des Mehrbenutzerbetriebs und die grundsätzlichen Lösungsmöglichkeiten. Anhand von praktischen Aufgabenstellungen vertiefen die Studenten die notwendigen Kenntnisse und Fähigkeiten Datenbanksysteme für die Erstellung von Anwendungssystemen einzusetzen.\n' +
+      '\n' +
+      'Die LV behandelt die folgenden Inhalte:\n' +
+      '- Einführung, Grundbegriffe und Darstellungsformen\n' +
+      '- Grundlagen der logischen Datenorganisation, relationales Modell\n' +
+      '- Datenbanksprachen (Schwerpunkt SQL)\n' +
+      '- Integrität und Sicherheit\n' +
+      '- Konzeptuelle Modellierung\n' +
+      '- Physische Datenorganisation, Speicher- File- und Index-Strukturen\n' +
+      '- Abfrageabarbeitung und Optimierung\n' +
+      '- Transaktionen und Recovery\n' +
+      '- Programmieren mit Datenbanksystemen\n' +
+      '\n' +
+      'Im Rahmen der LV werden die Inhalte theoretisch aufgearbeitet (Theorieteil) und praktisch umgesetzt (Praxis-/Übungsteil). Aus diesem Grund wird die LV in zwei Teilen durchgeführt:\n' +
+      '- Theorieteil: die Unterlagen werden vorab in Form von PDF Dokumenten und Vortragsvideos zur Verfügung gestellt. In den Vorträgen (jeweils DI, 13:15 – 14:45, die, wenn technisch und rechtlich möglich, aufgezeichnet werden) können Fragen gestellt und Probleme erörtert werden. Die Vorträge werden eventuell früher als um 14:45 beendet, wenn von Studentenseite keine Fragen mehr kommen.\n' +
+      '- Praxis-/Übungsteil: wöchentlich spezifischer Termin pro LV-Gruppe (siehe Vorlesungsverzeichnis bzw. LV-Webseite). Im Praxisteil werden Aufgabenstellungen bearbeitet und die zur Lösung erforderlichen Kenntnisse aufgefrischt und vertieft. Studenten präsentieren ihre Lösungen der Aufgabenstellungen und entwickeln im Laufe des Semesters eigenständig Projekte, deren Fortschritt ebenfalls im Rahmen dieser Praxiseinheiten präsentiert werden kann.\n' +
+      '\n' +
+      'Voraussetzungen:\n' +
+      'Grundlegende Kenntnisse in Modellierung und in Algorithmen und Datenstrukturen werden angenommen. Eventuell fehlende Kenntnisse sind im Selbststudium relativ einfach nachzuholen.',
     forum_id: '0305c3b4-654b-493e-ae5e-d27d8e3f96bc',
   },
   '051039': {
@@ -51,7 +70,37 @@ export const PROTOTYPE_COURSES: Courses = {
       'dafc64a5-dbf9-48da-95bb-f006899eae37',
     ],
     description:
-      'In dieser Lehrveranstaltung werden grundlegende Kenntnisse für Projektmanagement vorgezeigt, die man in einem erfundenen Projekt dann umsetzen soll. Für berufserfahrene Student*innen ist dieses Fach sehr leicht zu absolvieren, da sie damit wahrscheinlich schon in der Realtät zu tun hatten.',
+      'In dieser Lehrveranstaltung werden grundlegende Kenntnisse für Projektmanagement vorgezeigt, die man in einem erfundenen Projekt dann umsetzen soll. Für berufserfahrene Student*innen ist dieses Fach sehr leicht zu absolvieren, da sie damit wahrscheinlich schon in der Realtät zu tun hatten. Ziele:\n' +
+      'Fachlich:\n' +
+      'Nach erfolgreicher Absolvierung der VU besitzen Absolventen folgende fachliche Kompetenzen:\n' +
+      '* Sie kennen die Basiskonzepte des klassischen und agilen Managements von Informatik-Projekten und können je nach Charakteristika einer gegebenen Situation passende Methoden auswählen und anpassen.\n' +
+      '* Sie können einen Projektantrag und Projektauftrag (inkl. Projektplänen, Umwelt- und Risikoanalyse) für ein kleines Projekt im Team erstellen und die erarbeitete Projekt-Ergebnisse verständlich präsentieren.\n' +
+      '* Sie kennen die Unterschiede zwischen klassischen und agilen Methoden.\n' +
+      '\n' +
+      'Überfachlich:\n' +
+      'Nach erfolgreicher Absolvierung der VU besitzen Absolventen folgende überfachliche Kompetenzen:\n' +
+      '* Sie können ausgewählte Grundsätze der zwischenmenschlichen Kommunikation in Gruppen und Teams zumindest ansatzweise vor ihrem persönlichen Erfahrungshintergrund reflektieren.\n' +
+      '* Sie können den Prozess und ihren Beitrag im Team und in der Gruppe reflektieren und einschätzen.\n' +
+      '* Sie haben aktiv Erfahrung gesammelt, konstruktives Feedback zu geben und zu empfangen und ihre Wahrnehmung von zwischenmenschlichen Faktoren in Teams geschärft.\n' +
+      '\n' +
+      'Inhalte:\n' +
+      '* Management von Projekten mit besonderem Bezug auf Informatik- und interdisziplinäre Projekte\n' +
+      '* Projektinitiierung und Anforderungserhebung\n' +
+      '* Projektplanung inkl. Strukturierungs- und Organisationstechniken\n' +
+      '* Aufwandsschätzung\n' +
+      '* Risikoanalyse\n' +
+      '* Projektcontrolling\n' +
+      '* klassische und agile Methoden\n' +
+      '* Arbeiten in/mit Gruppen und Teams; Kommunikation; Konflikte\n' +
+      '\n' +
+      'Methoden:\n' +
+      '* Interaktiver Vortrag, Tutorial\n' +
+      '* Fachdiskurs in der Gruppe und mit Vertretern aus der Wirtschaft\n' +
+      '* Konzipierung und Planung eines Projektes in Teams\n' +
+      '* Einzelarbeit zu einer Fachthematik\n' +
+      '* Präsentation der erarbeiteten durch Studenten, Feedback\n' +
+      '* Online Selbst- bzw. Peer-Evaluation\n' +
+      '* Blended Learning',
     forum_id: '0305c3b4-654b-493e-ae5e-d27d8e3f96bc',
   },
 };
