@@ -18,6 +18,7 @@ const RootTabNavigation = () => {
       id="RootTab"
       initialRouteName="Home"
       screenOptions={{
+        headerShown: false,
         tabBarShowLabel: false,
         tabBarHideOnKeyboard: true,
         headerStyle: navigationStyles.headerContainer,

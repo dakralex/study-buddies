@@ -11,13 +11,13 @@ type CourseItemProps = AppButtonProps & {
 };
 
 const CourseItem = (props: CourseItemProps) => {
+  const {id, title, mentee_ids} = props.course;
   const navigation = useNavigation<AppNavigation>();
-  const {id, title, mentis_ids} = props.course;
 
   return (
     <SearchResultItem
       title={title}
-      description={`${mentis_ids.length} Mentis`}
+      description={`${mentee_ids.length} Mentees`}
       onPress={() => {
         navigation.navigate('CourseDetails', {
           courseId: id,

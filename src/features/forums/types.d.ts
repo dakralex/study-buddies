@@ -1,3 +1,5 @@
+import {PROTOTYPE_USERS} from '../users/users';
+
 export type Forum = {
   id: string;
   title: string;
@@ -7,7 +9,7 @@ export type Forum = {
 export type Post = {
   id: string;
   title?: string;
-  author_id: string;
+  author_id: keyof typeof PROTOTYPE_USERS;
   timestamp: string;
   content: string;
   answers?: Posts;

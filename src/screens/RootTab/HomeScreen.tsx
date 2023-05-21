@@ -13,7 +13,7 @@ const HomeScreen = ({navigation}: Props) => {
   return (
     <AppScreen padded={false}>
       <Container>
-        <Heading>Servus, Alaine!</Heading>
+        <Heading>Servus, Joel!</Heading>
         <NormalText>
           Das sind deine neuesten Ereignisse auf StudyBuddies!
         </NormalText>
