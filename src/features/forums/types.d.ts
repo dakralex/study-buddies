@@ -9,7 +9,7 @@ export type Forum = {
 export type Post = {
   id: string;
   title?: string;
-  author_id: string | keyof PROTOTYPE_USERS;
+  author_id: keyof typeof PROTOTYPE_USERS;
   timestamp: string;
   content: string;
   answers?: Posts;
