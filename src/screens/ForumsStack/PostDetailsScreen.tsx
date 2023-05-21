@@ -6,8 +6,9 @@ import FullPostItemList from '../../components/organisms/FullPostItemList';
 
 import {PROTOTYPE_FORUMS} from '../../features/forums/forums';
 import {PostDetailsScreenProps as Props} from '../../navigation/types';
+import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
 
-const PostDetailsScreen = ({route}: Props) => {
+const PostDetailsScreen = ({route, navigation}: Props) => {
   const {
     params: {postId, forumId},
   } = route;
@@ -22,6 +23,12 @@ const PostDetailsScreen = ({route}: Props) => {
         <React.Fragment>
           <FullPostItem post={post} />
           <FullPostItemList posts={post.answers ?? {}} />
+          <PrimaryButton
+            onPress={() => {
+              navigation.navigate('PostCreate');
+            }}>
+            Antwort erstellen
+          </PrimaryButton>
         </React.Fragment>
       )}
     </AppScreen>
