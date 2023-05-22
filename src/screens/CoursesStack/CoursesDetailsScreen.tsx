@@ -16,7 +16,9 @@ import {CoursesDetailsScreenProps as Props} from '../../navigation/types';
 const CoursesDetailsScreen = ({navigation, route}: Props) => {
   const {courseId} = route.params;
   const course = PROTOTYPE_COURSES[courseId];
-  const [toggleButtonState, setToggleButtonState] = useState(true);
+  const [toggleButtonState, setToggleButtonState] = useState(
+    !course.mentee_ids.includes('558966f0-ea4d-4bcc-bc14-544b07b28182'),
+  );
 
   useEffect(() => {
     navigation.setOptions({title: course.title ?? 'Nicht gefunden'});

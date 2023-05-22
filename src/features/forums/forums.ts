@@ -28,6 +28,15 @@ const generatePosts = (forumId, start, end): Posts => {
       timestamp: 'Sat, 12 Jun 2023 17:14:21 +0200',
       content:
         'hey leute, wisst ihr wann die nächste Eiheit stattfindet? Und sind wir wieder im Seminarraum 4? LG & danke',
+      answers: {
+        '': {
+          id: '#gen.uuid#',
+          forum_id: forumId,
+          author_id: '',
+          timestamp: '',
+          content: '',
+        },
+      },
     },
     'b28cef3f-392c-46fa-a6c0-388adea9fc8a': {
       id: 'b28cef3f-392c-46fa-a6c0-388adea9fc8a',
