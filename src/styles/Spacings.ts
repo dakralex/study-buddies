@@ -10,8 +10,8 @@ const spacingsStyles = StyleSheet.create({
   sectionSpacingBottomSmall: {
     marginBottom: 16,
   },
-  sectionSpacingLastElement: {
-    marginBottom: 'auto',
+  screenSpacingFab: {
+    paddingBottom: 24,
   },
 });
 

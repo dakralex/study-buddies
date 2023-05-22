@@ -1,5 +1,6 @@
 import React from 'react';
 import useScreenStyles from '../styles/Screens';
+import spacingsStyles from '../styles/Spacings';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {ScrollView, StyleProp, View, ViewStyle} from 'react-native';
 
@@ -27,7 +28,10 @@ const AppScreen = ({
   return (
     <View style={screenStyles.screenWrapper}>
       <View style={viewStyles}>
-        <ScreenView style={style}>{children}</ScreenView>
+        <ScreenView style={style}>
+          {children}
+          {BottomComponent && <View style={spacingsStyles.screenSpacingFab} />}
+        </ScreenView>
         {BottomComponent}
       </View>
     </View>

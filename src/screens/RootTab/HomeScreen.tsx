@@ -26,7 +26,7 @@ const HomeScreen = ({navigation}: Props) => {
         style={spacingsStyles.sectionSpacingBottomSmall}
         notifications={recentNotifications}
       />
-      <Container style={spacingsStyles.sectionSpacingLastElement}>
+      <Container>
         <PrimaryButton
           onPress={() => {
             navigation.navigate('Notifications');
