@@ -5,6 +5,8 @@ import {FlatList, StyleProp, ViewStyle} from 'react-native';
 
 import {Posts} from '../../features/forums/types';
 import {AppNavigation} from '../../navigation/types';
+import Container from '../atoms/Container';
+import Divider from '../atoms/Divider';
 
 type PostListProps = {
   style?: StyleProp<ViewStyle>;
@@ -21,15 +23,18 @@ const PostItemList = ({style, posts, forumId}: PostListProps) => {
       scrollEnabled={false}
       data={Object.values(posts)}
       renderItem={({item: post}) => (
-        <PostItem
-          post={post}
-          onPress={() => {
-            navigation.navigate('PostDetails', {
-              postId: post.id,
-              forumId: forumId,
-            });
-          }}
-        />
+        <Container>
+          <PostItem
+            post={post}
+            onPress={() => {
+              navigation.navigate('PostDetails', {
+                postId: post.id,
+                forumId: forumId,
+              });
+            }}
+          />
+          <Divider height={2} />
+        </Container>
       )}
       keyExtractor={item => item.id}
     />

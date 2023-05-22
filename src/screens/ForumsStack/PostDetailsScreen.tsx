@@ -1,8 +1,10 @@
 import React, {useEffect} from 'react';
 import AppScreen from '../AppScreen';
+import Divider from '../../components/atoms/Divider';
 import Container from '../../components/atoms/Container';
 import NormalText from '../../components/atoms/text/NormalText';
 import FullPostItem from '../../components/molecules/FullPostItem';
+import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
 import FullPostItemList from '../../components/organisms/FullPostItemList';
 import FloatingActionButton from '../../components/atoms/buttons/FloatingActionButton';
 
@@ -44,6 +46,7 @@ const PostDetailsScreen = ({route, navigation}: Props) => {
           <Container>
             <FullPostItem post={post} />
           </Container>
+          <Divider height={4} />
           {!post.answers ? (
             <Container>
               <NormalText>Noch keine Antwort, sei die/der Erste!</NormalText>
