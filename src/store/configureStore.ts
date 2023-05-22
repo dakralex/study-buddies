@@ -1,5 +1,5 @@
+import {useDispatch} from 'react-redux';
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
-import { useDispatch } from "react-redux";
 
 const rootReducer = combineReducers({});
 

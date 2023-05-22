@@ -10,15 +10,18 @@ import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
 import {PROTOTYPE_NOTIFICATIONS} from '../../features/notifications/notifications';
 
 const HomeScreen = ({navigation}: Props) => {
+  const notifications = Object.values(PROTOTYPE_NOTIFICATIONS);
+  const recentNotifications = notifications.slice(0, 3);
+
   return (
-    <AppScreen padded={false}>
+    <AppScreen scroll={true} padded={false}>
       <Container>
         <Heading>Servus, Joel!</Heading>
         <NormalText>
           Das sind deine neuesten Ereignisse auf StudyBuddies!
         </NormalText>
       </Container>
-      <NotificationList notifications={PROTOTYPE_NOTIFICATIONS.slice(0, 3)} />
+      <NotificationList notifications={recentNotifications} />
       <Container>
         <PrimaryButton
           onPress={() => {

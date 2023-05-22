@@ -1,10 +1,10 @@
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import SearchResultItem from '../molecules/SearchResultItem';
 
 import {Forums} from '../../features/forums/types';
 import {AppNavigation} from '../../navigation/types';
-import SearchResultItem from '../molecules/SearchResultItem';
 
 type ForumOverviewListProps = {
   forums: Forums;
@@ -15,7 +15,7 @@ const ForumOverviewList = ({forums}: ForumOverviewListProps) => {
 
   return (
     <FlatList
-      style={styles.forumListContainer}
+      scrollEnabled={false}
       data={Object.values(forums)}
       renderItem={({item: forum}) => (
         <SearchResultItem
@@ -28,14 +28,9 @@ const ForumOverviewList = ({forums}: ForumOverviewListProps) => {
           }}
         />
       )}
+      keyExtractor={item => item.id}
     />
   );
 };
-
-const styles = StyleSheet.create({
-  forumListContainer: {
-    paddingVertical: 16,
-  },
-});
 
 export default ForumOverviewList;

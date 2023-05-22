@@ -8,6 +8,7 @@ const useNavigationStyles = () =>
     headerText: {
       color: colorPalette.primary,
       fontSize: 24,
+      fontWeight: 'bold',
     },
     headerBackButton: {
       color: colorPalette.foreground,

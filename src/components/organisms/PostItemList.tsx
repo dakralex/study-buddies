@@ -1,6 +1,6 @@
 import React from 'react';
+import {FlatList} from 'react-native';
 import PostItem from '../molecules/PostItem';
-import {FlatList, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import {Posts} from '../../features/forums/types';
@@ -16,7 +16,7 @@ const PostItemList = ({posts, forumId}: PostListProps) => {
 
   return (
     <FlatList
-      style={styles.postListContainer}
+      scrollEnabled={false}
       data={Object.values(posts)}
       renderItem={({item: post}) => (
         <PostItem
@@ -29,14 +29,9 @@ const PostItemList = ({posts, forumId}: PostListProps) => {
           }}
         />
       )}
+      keyExtractor={item => item.id}
     />
   );
 };
-
-const styles = StyleSheet.create({
-  postListContainer: {
-    paddingVertical: 16,
-  },
-});
 
 export default PostItemList;

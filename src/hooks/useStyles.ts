@@ -1,8 +1,8 @@
-import {StyleSheet} from 'react-native';
 import {useMemo} from 'react';
+import {StyleSheet} from 'react-native';
 import {useColorPalette} from './Colors';
-import {EdgeInsets, useSafeAreaInsets} from 'react-native-safe-area-context';
 import {ColorPalette} from '../styles/types';
+import {EdgeInsets, useSafeAreaInsets} from 'react-native-safe-area-context';
 import NamedStyles = StyleSheet.NamedStyles;
 
 type UseStylesProps = {

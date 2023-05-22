@@ -39,7 +39,7 @@ export type ForumsStackParamList = {
   ForumsOverview: undefined;
   ForumsDetails: {forumId: string};
   PostDetails: {forumId: string; postId: string};
-  PostCreate: undefined;
+  PostCreate: {isAnswer: boolean};
 };
 
 /**                                                                          **/

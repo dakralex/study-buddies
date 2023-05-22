@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList} from 'react-native';
 import CourseItem from '../molecules/CourseItem';
 import {Courses} from '../../features/courses/types';
 
@@ -10,17 +10,12 @@ type CourseListProps = {
 const CourseList = ({courses}: CourseListProps) => {
   return (
     <FlatList
-      style={styles.courseListContainer}
+      scrollEnabled={false}
       data={Object.values(courses)}
       renderItem={({item: course}) => <CourseItem course={course} />}
+      keyExtractor={item => item.id}
     />
   );
 };
-
-const styles = StyleSheet.create({
-  courseListContainer: {
-    paddingVertical: 16,
-  },
-});
 
 export default CourseList;

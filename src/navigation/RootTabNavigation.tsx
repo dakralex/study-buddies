@@ -17,7 +17,6 @@ const RootTabNavigation = () => {
       id="RootTab"
       initialRouteName="Home"
       screenOptions={{
-        headerShown: false,
         tabBarShowLabel: false,
         tabBarHideOnKeyboard: true,
         headerStyle: navigationStyles.headerContainer,
@@ -30,6 +29,7 @@ const RootTabNavigation = () => {
         name="Home"
         component={HomeScreen}
         options={{
+          headerTitle: 'StudyBuddies',
           tabBarIcon: ({focused, color, size}) => (
             <Icon
               name={focused ? 'home' : 'home-outline'}
@@ -43,6 +43,7 @@ const RootTabNavigation = () => {
         name="Courses"
         component={CoursesStackNavigation}
         options={{
+          headerShown: false,
           tabBarIcon: ({focused, color, size}) => (
             <Icon
               name={focused ? 'library' : 'library-outline'}
@@ -56,6 +57,7 @@ const RootTabNavigation = () => {
         name="Forums"
         component={ForumsStackNavigation}
         options={{
+          headerShown: false,
           tabBarIcon: ({focused, color, size}) => (
             <Icon
               name={focused ? 'file-tray-stacked' : 'file-tray-stacked-outline'}
