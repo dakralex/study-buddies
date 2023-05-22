@@ -53,7 +53,9 @@ const PostDetailsScreen = ({route, navigation}: Props) => {
               </NormalText>
             </Container>
           ) : (
-            <FullPostItemList posts={post.answers} />
+            <Container>
+              <FullPostItemList posts={post.answers} />
+            </Container>
           )}
         </React.Fragment>
       )}
