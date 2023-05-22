@@ -5,6 +5,7 @@ export type Notification = {
   type: NotificationType;
   title: string;
   message: string;
+  link_id: string;
 };
 
 export type Notifications = {

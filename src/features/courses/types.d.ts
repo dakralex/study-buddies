@@ -1,5 +1,3 @@
-import {PROTOTYPE_FORUMS} from '../forums/forums';
-
 export type Course = {
   id: string;
   title: string;
@@ -7,7 +5,7 @@ export type Course = {
   study: string;
   description: string;
   mentee_ids: Array<string>;
-  forum_id: keyof typeof PROTOTYPE_FORUMS;
+  forum_id: string;
 };
 
 export type Courses = {
