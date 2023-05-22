@@ -22,7 +22,7 @@ const FullPostItem = (props: FullPostItemProps) => {
         <SubSubHeading>{title}</SubSubHeading>
       </View>
       <View>
-        <NormalText>{user.fullname}</NormalText>
+        <NormalText>{user?.fullname ?? 'Unbekannter Autor'}</NormalText>
         <NormalText>{postDateString}</NormalText>
         <NormalText>{content}</NormalText>
       </View>

@@ -1,17 +1,13 @@
 import React from 'react';
-import {NotificationsScreenProps as Props} from '../../navigation/types';
 import AppScreen from '../AppScreen';
-import Container from '../../components/atoms/Container';
-import Heading from '../../components/atoms/text/Heading';
 import NotificationList from '../../components/organisms/NotificationList';
+
+import {NotificationsScreenProps as Props} from '../../navigation/types';
 import {PROTOTYPE_NOTIFICATIONS} from '../../features/notifications/notifications';
 
 const NotificationsScreen = ({}: Props) => {
   return (
-    <AppScreen padded={false}>
-      <Container>
-        <Heading>Deine Benachrichtigungen</Heading>
-      </Container>
+    <AppScreen scroll={true} padded={false}>
       <NotificationList notifications={PROTOTYPE_NOTIFICATIONS} />
     </AppScreen>
   );
