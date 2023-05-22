@@ -5,6 +5,8 @@ import {useNavigation} from '@react-navigation/native';
 
 import {Posts} from '../../features/forums/types';
 import {AppNavigation} from '../../navigation/types';
+import Container from '../atoms/Container';
+import Divider from '../atoms/Divider';
 
 type PostListProps = {
   posts: Posts;
@@ -19,15 +21,18 @@ const PostItemList = ({posts, forumId}: PostListProps) => {
       style={styles.postListContainer}
       data={Object.values(posts)}
       renderItem={({item: post}) => (
-        <PostItem
-          post={post}
-          onPress={() => {
-            navigation.navigate('PostDetails', {
-              postId: post.id,
-              forumId: forumId,
-            });
-          }}
-        />
+        <Container>
+          <PostItem
+            post={post}
+            onPress={() => {
+              navigation.navigate('PostDetails', {
+                postId: post.id,
+                forumId: forumId,
+              });
+            }}
+          />
+          <Divider height={2} />
+        </Container>
       )}
     />
   );

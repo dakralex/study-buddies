@@ -7,6 +7,7 @@ import FullPostItemList from '../../components/organisms/FullPostItemList';
 import {PROTOTYPE_FORUMS} from '../../features/forums/forums';
 import {PostDetailsScreenProps as Props} from '../../navigation/types';
 import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
+import Divider from '../../components/atoms/Divider';
 
 const PostDetailsScreen = ({route, navigation}: Props) => {
   const {
@@ -22,6 +23,7 @@ const PostDetailsScreen = ({route, navigation}: Props) => {
       ) : (
         <React.Fragment>
           <FullPostItem post={post} />
+          <Divider height={4} />
           <FullPostItemList posts={post.answers ?? {}} />
           <PrimaryButton
             onPress={() => {
