@@ -1,16 +1,18 @@
 import React from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, StyleProp, ViewStyle} from 'react-native';
 import NotificationItem from '../molecules/NotificationItem';
 
 import {Notification, Notifications} from '../../features/notifications/types';
 
 type NotificationListProps = {
+  style?: StyleProp<ViewStyle>;
   notifications: Notifications | Array<Notification>;
 };
 
-const NotificationList = ({notifications}: NotificationListProps) => {
+const NotificationList = ({style, notifications}: NotificationListProps) => {
   return (
     <FlatList
+      style={style}
       scrollEnabled={false}
       data={Object.values(notifications)}
       renderItem={({item: notification}) => (

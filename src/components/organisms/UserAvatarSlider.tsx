@@ -1,16 +1,18 @@
 import React from 'react';
-import UserAvatarItem from '../molecules/UserAvatarItem';
 import HorizontalView from '../atoms/HorizontalView';
+import UserAvatarItem from '../molecules/UserAvatarItem';
+
 import {Users} from '../../features/users/types';
-import {StyleSheet} from 'react-native';
+import {StyleProp, StyleSheet, ViewStyle} from 'react-native';
 
 type UserAvatarSliderProps = {
+  style?: StyleProp<ViewStyle>;
   users: Users;
 };
 
-const UserAvatarSlider = ({users}: UserAvatarSliderProps) => {
+const UserAvatarSlider = ({style, users}: UserAvatarSliderProps) => {
   return (
-    <HorizontalView style={styles.userAvatarSliderContainer}>
+    <HorizontalView style={[styles.userAvatarSliderContainer, style]}>
       {Object.values(users).map(user => (
         <UserAvatarItem
           user={user}

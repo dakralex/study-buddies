@@ -17,14 +17,16 @@ const Colors: ThemedPalette = {
   dark: {
     ...fixedColors,
     background: '#161C2E',
-    foreground: '#F1EEE4',
+    foreground: '#E8E6F2',
     gray: '#283253',
+    lightGray: '#8392C3',
   },
   light: {
     ...fixedColors,
-    background: '#F1EEE4',
+    background: '#E8E6F2',
     foreground: '#161C2E',
-    gray: '#BABABA',
+    gray: '#B5AFD5',
+    lightGray: '#DAD7EA',
   },
 };
 

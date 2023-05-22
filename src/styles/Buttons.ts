@@ -46,6 +46,11 @@ const useButtonStyles = () =>
     secondaryButtonContent: {
       paddingRight: 6,
     },
+    floatingActionButtonWrapper: {
+      position: 'absolute',
+      right: 16,
+      bottom: 16,
+    },
     notificationItemWrapper: {
       backgroundColor: colorPalette.gray,
       paddingHorizontal: SCREEN_PADDING_HORIZONTAL,

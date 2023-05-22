@@ -7,11 +7,19 @@ export const SCREEN_PADDING_HORIZONTAL = 16;
 const useScreenStyles = () =>
   useStyles(({colorPalette, safeAreaInsets}) => {
     const screenViewDefaults: StyleProp<ViewStyle> = {
+      position: 'relative',
       flex: 1,
       backgroundColor: colorPalette.background,
     };
 
     return {
+      screenWrapper: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+      },
       screenViewContainer: {
         ...screenViewDefaults,
         paddingTop: safeAreaInsets.top + SCREEN_PADDING_HORIZONTAL,

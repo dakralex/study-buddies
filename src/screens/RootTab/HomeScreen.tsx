@@ -2,11 +2,12 @@ import React from 'react';
 import {HomeScreenProps as Props} from '../../navigation/types';
 
 import AppScreen from '../AppScreen';
+import spacingsStyles from '../../styles/Spacings';
 import Container from '../../components/atoms/Container';
 import Heading from '../../components/atoms/text/Heading';
 import NormalText from '../../components/atoms/text/NormalText';
-import NotificationList from '../../components/organisms/NotificationList';
 import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
+import NotificationList from '../../components/organisms/NotificationList';
 import {PROTOTYPE_NOTIFICATIONS} from '../../features/notifications/notifications';
 
 const HomeScreen = ({navigation}: Props) => {
@@ -15,14 +16,17 @@ const HomeScreen = ({navigation}: Props) => {
 
   return (
     <AppScreen scroll={true} padded={false}>
-      <Container>
+      <Container style={spacingsStyles.sectionSpacingBottomSmall}>
         <Heading>Servus, Joel!</Heading>
         <NormalText>
           Das sind deine neuesten Ereignisse auf StudyBuddies!
         </NormalText>
       </Container>
-      <NotificationList notifications={recentNotifications} />
-      <Container>
+      <NotificationList
+        style={spacingsStyles.sectionSpacingBottomSmall}
+        notifications={recentNotifications}
+      />
+      <Container style={spacingsStyles.sectionSpacingLastElement}>
         <PrimaryButton
           onPress={() => {
             navigation.navigate('Notifications');

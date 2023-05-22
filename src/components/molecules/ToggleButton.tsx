@@ -4,7 +4,7 @@ import NormalText from '../atoms/text/NormalText';
 import useButtonStyles from '../../styles/Buttons';
 import AppButton, {AppButtonProps} from '../atoms/AppButton';
 
-type ToggleButtonProps = AppButtonProps & {
+export type ToggleButtonProps = AppButtonProps & {
   state: boolean;
   setState: React.Dispatch<React.SetStateAction<boolean>>;
   stateOnText: string;

@@ -3,11 +3,11 @@ import {FlatList} from 'react-native';
 import CourseItem from '../molecules/CourseItem';
 import {Courses} from '../../features/courses/types';
 
-type CourseListProps = {
+type CoursesListProps = {
   courses: Courses;
 };
 
-const CourseList = ({courses}: CourseListProps) => {
+const CoursesList = ({courses}: CoursesListProps) => {
   return (
     <FlatList
       scrollEnabled={false}
@@ -18,4 +18,4 @@ const CourseList = ({courses}: CourseListProps) => {
   );
 };
 
-export default CourseList;
+export default CoursesList;

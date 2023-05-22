@@ -1,13 +1,14 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
 import {SCREEN_PADDING_HORIZONTAL} from '../../styles/Screens';
+import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 
 type ContainerProps = {
+  style?: StyleProp<ViewStyle>;
   children?: React.ReactNode;
 };
 
-const Container = ({children}: ContainerProps) => {
-  return <View style={styles.container}>{children}</View>;
+const Container = ({style, children}: ContainerProps) => {
+  return <View style={[styles.container, style]}>{children}</View>;
 };
 
 const styles = StyleSheet.create({

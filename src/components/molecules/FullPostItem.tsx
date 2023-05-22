@@ -1,8 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
-import AppIconButton from '../atoms/AppIconButton';
-import useButtonStyles from '../../styles/Buttons';
 import NormalText from '../atoms/text/NormalText';
+import useButtonStyles from '../../styles/Buttons';
 import SubSubHeading from '../atoms/text/SubSubHeading';
 
 import {Post} from '../../features/forums/types';
@@ -18,20 +17,16 @@ const FullPostItem = (props: FullPostItemProps) => {
   const user = PROTOTYPE_USERS[author_id];
 
   return (
-    <AppIconButton
-      wrapperStyle={buttonStyles.searchResultItemWrapper}
-      containerStyle={buttonStyles.searchResultItemContainer}>
-      <View style={buttonStyles.searchResultItemContent}>
-        <View>
-          <SubSubHeading>{title}</SubSubHeading>
-        </View>
-        <View>
-          <NormalText>{user.fullname}</NormalText>
-          <NormalText>{timestamp}</NormalText>
-          <NormalText>{content}</NormalText>
-        </View>
+    <View>
+      <View>
+        <SubSubHeading>{title}</SubSubHeading>
       </View>
-    </AppIconButton>
+      <View>
+        <NormalText>{user.fullname}</NormalText>
+        <NormalText>{timestamp}</NormalText>
+        <NormalText>{content}</NormalText>
+      </View>
+    </View>
   );
 };
 

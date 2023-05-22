@@ -1,41 +1,32 @@
 import React from 'react';
-import {View} from 'react-native';
-import NormalText from '../atoms/text/NormalText';
-import useButtonStyles from '../../styles/Buttons';
-import AppIconButton from '../atoms/AppIconButton';
-import SubSubHeading from '../atoms/text/SubSubHeading';
 
 import {Post} from '../../features/forums/types';
 import {AppButtonProps} from '../atoms/AppButton';
+import SearchResultItem from './SearchResultItem';
 import {PROTOTYPE_USERS} from '../../features/users/users';
 
 type PostItemProps = AppButtonProps & {
   post: Post;
 };
 const PostItem = (props: PostItemProps) => {
-  const {
-    onPress,
-    post: {title, author_id, timestamp},
-  } = props;
-  const buttonStyles = useButtonStyles();
+  const {onPress} = props;
+  const {title, author_id, timestamp} = props.post;
   const user = PROTOTYPE_USERS[author_id];
 
+  const now = new Date();
+  const postDate = new Date(timestamp);
+  const isPostFromToday =
+    now.getFullYear() - postDate.getFullYear() === 0 && now - postDate === 0;
+  const postDateString = isPostFromToday
+    ? postDate.toTimeString()
+    : postDate.toLocaleDateString();
+
   return (
-    <AppIconButton
+    <SearchResultItem
       onPress={onPress}
-      wrapperStyle={buttonStyles.searchResultItemWrapper}
-      containerStyle={buttonStyles.searchResultItemContainer}>
-      <View style={buttonStyles.searchResultItemContent}>
-        <View>
-          <SubSubHeading>{title}</SubSubHeading>
-        </View>
-        <View>
-          <NormalText>
-            {user.fullname}, {timestamp}
-          </NormalText>
-        </View>
-      </View>
-    </AppIconButton>
+      title={title ?? ''}
+      description={`${user.fullname} at ${postDateString}`}
+    />
   );
 };
 

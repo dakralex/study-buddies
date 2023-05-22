@@ -1,21 +1,22 @@
 export type FixedColorPalette = {
   [index: string]: string;
-  primary;
-  secondary;
-  red;
-  yellow;
-  green;
-  teal;
-  lightblue;
-  darkblue;
-  violet;
-  magenta;
+  primary: string;
+  secondary: string;
+  red: string;
+  yellow: string;
+  green: string;
+  teal: string;
+  lightblue: string;
+  darkblue: string;
+  violet: string;
+  magenta: string;
 };
 
 export type ColorPalette = FixedColorPalette & {
-  background;
-  foreground;
-  gray;
+  background: string;
+  foreground: string;
+  gray: string;
+  lightGray: string;
 };
 
 export type ThemedPalette = {
