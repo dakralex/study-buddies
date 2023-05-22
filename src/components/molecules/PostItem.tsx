@@ -13,13 +13,8 @@ const PostItem = (props: PostItemProps) => {
   const {title, author_id, timestamp} = props.post;
   const user = PROTOTYPE_USERS[author_id];
 
-  const now = new Date();
   const postDate = new Date(timestamp);
-  const isPostFromToday =
-    now.getFullYear() - postDate.getFullYear() === 0 && now - postDate === 0;
-  const postDateString = isPostFromToday
-    ? postDate.toTimeString()
-    : postDate.toLocaleDateString();
+  const postDateString = postDate.toLocaleDateString();
 
   return (
     <SearchResultItem

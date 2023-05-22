@@ -1,12 +1,11 @@
 import React from 'react';
+import Divider from '../atoms/Divider';
 import PostItem from '../molecules/PostItem';
 import {useNavigation} from '@react-navigation/native';
 import {FlatList, StyleProp, ViewStyle} from 'react-native';
 
 import {Posts} from '../../features/forums/types';
 import {AppNavigation} from '../../navigation/types';
-import Container from '../atoms/Container';
-import Divider from '../atoms/Divider';
 
 type PostListProps = {
   style?: StyleProp<ViewStyle>;
@@ -23,7 +22,7 @@ const PostItemList = ({style, posts, forumId}: PostListProps) => {
       scrollEnabled={false}
       data={Object.values(posts)}
       renderItem={({item: post}) => (
-        <Container>
+        <React.Fragment>
           <PostItem
             post={post}
             onPress={() => {
@@ -34,7 +33,7 @@ const PostItemList = ({style, posts, forumId}: PostListProps) => {
             }}
           />
           <Divider height={2} />
-        </Container>
+        </React.Fragment>
       )}
       keyExtractor={item => item.id}
     />

@@ -1,7 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
 import NormalText from '../atoms/text/NormalText';
-import useButtonStyles from '../../styles/Buttons';
 import SubSubHeading from '../atoms/text/SubSubHeading';
 
 import {Post} from '../../features/forums/types';
@@ -13,8 +12,9 @@ type FullPostItemProps = AppButtonProps & {
 };
 const FullPostItem = (props: FullPostItemProps) => {
   const {title, author_id, timestamp, content} = props.post;
-  const buttonStyles = useButtonStyles();
   const user = PROTOTYPE_USERS[author_id];
+  const postDate = new Date(timestamp);
+  const postDateString = `${postDate.toLocaleDateString()} ${postDate.toLocaleTimeString()}`;
 
   return (
     <View>
@@ -23,7 +23,7 @@ const FullPostItem = (props: FullPostItemProps) => {
       </View>
       <View>
         <NormalText>{user.fullname}</NormalText>
-        <NormalText>{timestamp}</NormalText>
+        <NormalText>{postDateString}</NormalText>
         <NormalText>{content}</NormalText>
       </View>
     </View>

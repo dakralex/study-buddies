@@ -4,7 +4,6 @@ import Divider from '../../components/atoms/Divider';
 import Container from '../../components/atoms/Container';
 import NormalText from '../../components/atoms/text/NormalText';
 import FullPostItem from '../../components/molecules/FullPostItem';
-import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
 import FullPostItemList from '../../components/organisms/FullPostItemList';
 import FloatingActionButton from '../../components/atoms/buttons/FloatingActionButton';
 
@@ -45,11 +44,13 @@ const PostDetailsScreen = ({route, navigation}: Props) => {
         <React.Fragment>
           <Container>
             <FullPostItem post={post} />
+            <Divider height={3} />
           </Container>
-          <Divider height={4} />
           {!post.answers ? (
             <Container>
-              <NormalText>Noch keine Antwort, sei die/der Erste!</NormalText>
+              <NormalText style={{paddingVertical: 16, textAlign: 'center'}}>
+                Noch keine Antwort, sei die/der Erste!
+              </NormalText>
             </Container>
           ) : (
             <FullPostItemList posts={post.answers} />

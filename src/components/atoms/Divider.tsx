@@ -1,25 +1,23 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useColorPalette} from '../../hooks/Colors';
+import {useGrayColor} from '../../hooks/Colors';
 
 type DividerProps = {
   height: number;
 };
 
 const Divider = ({height}: DividerProps) => {
-  const colorPalette = useColorPalette();
+  const gray = useGrayColor();
 
-  return (
-    <View
-      style={[styles.divider, {height}, {backgroundColor: colorPalette.grey}]}
-    />
-  );
+  const styles = StyleSheet.create({
+    divider: {
+      marginVertical: 8,
+      height: height,
+      backgroundColor: gray,
+    },
+  });
+
+  return <View style={styles.divider} />;
 };
-
-const styles = StyleSheet.create({
-  divider: {
-    marginVertical: 8,
-  },
-});
 
 export default Divider;

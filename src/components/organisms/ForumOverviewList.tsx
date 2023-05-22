@@ -1,5 +1,6 @@
 import React from 'react';
 import {FlatList} from 'react-native';
+import Divider from '../atoms/Divider';
 import {useNavigation} from '@react-navigation/native';
 import SearchResultItem from '../molecules/SearchResultItem';
 
@@ -18,15 +19,18 @@ const ForumOverviewList = ({forums}: ForumOverviewListProps) => {
       scrollEnabled={false}
       data={Object.values(forums)}
       renderItem={({item: forum}) => (
-        <SearchResultItem
-          title={forum.title}
-          description={`${Object.values(forum.posts).length} Posts`}
-          onPress={() => {
-            navigation.navigate('ForumsDetails', {
-              forumId: forum.id,
-            });
-          }}
-        />
+        <React.Fragment>
+          <SearchResultItem
+            title={forum.title}
+            description={`${Object.values(forum.posts).length} Posts`}
+            onPress={() => {
+              navigation.navigate('ForumsDetails', {
+                forumId: forum.id,
+              });
+            }}
+          />
+          <Divider height={2} />
+        </React.Fragment>
       )}
       keyExtractor={item => item.id}
     />
