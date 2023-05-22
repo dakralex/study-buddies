@@ -29,12 +29,20 @@ const generatePosts = (forumId, start, end): Posts => {
       content:
         'hey leute, wisst ihr wann die nächste Eiheit stattfindet? Und sind wir wieder im Seminarraum 4? LG & danke',
       answers: {
-        '': {
-          id: '#gen.uuid#',
+        '655e4358-74bf-4fca-ad65-db98fce6c52e': {
+          id: '655e4358-74bf-4fca-ad65-db98fce6c52e',
           forum_id: forumId,
-          author_id: '',
-          timestamp: '',
-          content: '',
+          author_id: 'ed7b9726-3f4c-4e5b-9784-a25526424f52',
+          timestamp: 'Sat, 12 Jun 2023 18:09:58 +0200',
+          content: 'Das würde mich auch interessieren!',
+        },
+        'a43f31a7-53bc-4d14-a759-678c9f72f69f': {
+          id: 'a43f31a7-53bc-4d14-a759-678c9f72f69f',
+          forum_id: forumId,
+          author_id: 'ffcdcbe8-eaa8-4021-8144-3ca7f90c2cf4',
+          timestamp: 'Sun, 13 Jun 2023 08:31:02 +0200',
+          content:
+            'Die nächte Einheit ist gleich morgen wieder im Seminarraum 4.',
         },
       },
     },
@@ -134,7 +142,7 @@ export const PROTOTYPE_FORUMS: Forums = {
   },
   'e6b2ee39-c097-4660-bb6b-81a11624562a': {
     id: 'e6b2ee39-c097-4660-bb6b-81a11624562a',
-    title: 'Programmiersprachen und -konzepte',
+    title: 'PLC Programmiersprachen und -konzepte',
     posts: generatePosts('e6b2ee39-c097-4660-bb6b-81a11624562a', 4, 7),
   },
   '39f77b6d-2c4c-4f27-b462-d8d0d4a7cc17': {
