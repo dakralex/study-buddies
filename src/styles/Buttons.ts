@@ -61,8 +61,8 @@ const useButtonStyles = () =>
       width: '100%',
     },
     notificationItemContent: {
+      flex: 1,
       paddingHorizontal: 10,
-      marginRight: 'auto',
     },
     searchResultItemWrapper: {
       paddingHorizontal: SCREEN_PADDING_HORIZONTAL,

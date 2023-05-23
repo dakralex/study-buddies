@@ -3,9 +3,12 @@ import AppText, {TextProps} from '../AppText';
 
 type SmallTextProps = TextProps;
 
-const SmallText = ({style, children}: SmallTextProps) => {
+const SmallText = ({style, numberOfLines, children}: SmallTextProps) => {
   return (
-    <AppText style={style} globalStyleKey="smallText">
+    <AppText
+      style={style}
+      numberOfLines={numberOfLines}
+      globalStyleKey="smallText">
       {children}
     </AppText>
   );

@@ -3,9 +3,12 @@ import AppText, {TextProps} from '../AppText';
 
 type HeadingProps = TextProps;
 
-const Heading = ({style, children}: HeadingProps) => {
+const Heading = ({style, numberOfLines, children}: HeadingProps) => {
   return (
-    <AppText style={style} globalStyleKey="heading">
+    <AppText
+      style={style}
+      numberOfLines={numberOfLines}
+      globalStyleKey="heading">
       {children}
     </AppText>
   );

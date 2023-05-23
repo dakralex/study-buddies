@@ -3,9 +3,16 @@ import AppText, {TextProps} from '../AppText';
 
 type SubsubheadingProps = TextProps;
 
-const SubSubHeading = ({style, children}: SubsubheadingProps) => {
+const SubSubHeading = ({
+  style,
+  numberOfLines,
+  children,
+}: SubsubheadingProps) => {
   return (
-    <AppText style={style} globalStyleKey="subSubHeading">
+    <AppText
+      style={style}
+      numberOfLines={numberOfLines}
+      globalStyleKey="subSubHeading">
       {children}
     </AppText>
   );

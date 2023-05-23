@@ -42,14 +42,12 @@ const NotificationItem = (props: NotificationItemProps) => {
         size={buttonStyles.buttonIcon.width}
         color={buttonStyles.buttonIcon.color}
       />
-      <NormalText style={buttonStyles.notificationItemContent}>
-        <View>
-          <SubSubHeading>{title}</SubSubHeading>
-        </View>
-        <View>
-          <NormalText>{message}</NormalText>
-        </View>
-      </NormalText>
+      <View style={buttonStyles.notificationItemContent}>
+        <SubSubHeading style={{flex: 1}} numberOfLines={1}>
+          {title}
+        </SubSubHeading>
+        <NormalText numberOfLines={1}>{message}</NormalText>
+      </View>
     </AppIconButton>
   );
 };

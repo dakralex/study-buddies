@@ -1,9 +1,12 @@
 import React from 'react';
 import AppText, {TextProps} from '../AppText';
 
-const BoldText = ({style, children}: TextProps) => {
+const BoldText = ({style, numberOfLines, children}: TextProps) => {
   return (
-    <AppText style={style} globalStyleKey="boldText">
+    <AppText
+      style={style}
+      numberOfLines={numberOfLines}
+      globalStyleKey="boldText">
       {children}
     </AppText>
   );
