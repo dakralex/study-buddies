@@ -2,11 +2,11 @@ import React from 'react';
 import {FlatList, StyleProp, ViewStyle} from 'react-native';
 import NotificationItem from '../molecules/NotificationItem';
 
-import {Notification, Notifications} from '../../features/notifications/types';
+import {Notifications} from '../../features/notifications/types';
 
 type NotificationListProps = {
   style?: StyleProp<ViewStyle>;
-  notifications: Notifications | Array<Notification>;
+  notifications: Notifications;
 };
 
 const NotificationList = ({style, notifications}: NotificationListProps) => {

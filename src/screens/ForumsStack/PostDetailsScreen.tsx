@@ -7,13 +7,14 @@ import FullPostItem from '../../components/molecules/FullPostItem';
 import FullPostItemList from '../../components/organisms/FullPostItemList';
 import FloatingActionButton from '../../components/atoms/buttons/FloatingActionButton';
 
-import {PROTOTYPE_FORUMS} from '../../features/forums/forums';
+import {useAppSelector} from '../../store/configureStore';
+import {selectPost} from '../../features/forums/forumsSlice';
+
 import {PostDetailsScreenProps as Props} from '../../navigation/types';
 
 const PostDetailsScreen = ({route, navigation}: Props) => {
-  const {postId, forumId} = route.params;
-  const forum = PROTOTYPE_FORUMS[forumId];
-  const post = forum?.posts[postId];
+  const {forumId, postId} = route.params;
+  const post = useAppSelector(state => selectPost(state, forumId, postId));
 
   useEffect(() => {
     navigation.setOptions({title: post?.title ?? 'Nicht gefunden'});

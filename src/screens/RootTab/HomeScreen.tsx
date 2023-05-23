@@ -1,6 +1,4 @@
 import React from 'react';
-import {HomeScreenProps as Props} from '../../navigation/types';
-
 import AppScreen from '../AppScreen';
 import spacingsStyles from '../../styles/Spacings';
 import Container from '../../components/atoms/Container';
@@ -8,11 +6,14 @@ import Heading from '../../components/atoms/text/Heading';
 import NormalText from '../../components/atoms/text/NormalText';
 import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
 import NotificationList from '../../components/organisms/NotificationList';
-import {PROTOTYPE_NOTIFICATIONS} from '../../features/notifications/notifications';
+
+import {useAppSelector} from '../../store/configureStore';
+import {selectRecentNotifications} from '../../features/notifications/notificationsSlice';
+
+import {HomeScreenProps as Props} from '../../navigation/types';
 
 const HomeScreen = ({navigation}: Props) => {
-  const notifications = Object.values(PROTOTYPE_NOTIFICATIONS);
-  const recentNotifications = notifications.slice(0, 3);
+  const recentNotifications = useAppSelector(selectRecentNotifications);
 
   return (
     <AppScreen scroll={true} padded={false}>

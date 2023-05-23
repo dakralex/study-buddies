@@ -6,12 +6,14 @@ import NormalText from '../../components/atoms/text/NormalText';
 import PostItemList from '../../components/organisms/PostItemList';
 import FloatingActionButton from '../../components/atoms/buttons/FloatingActionButton';
 
-import {PROTOTYPE_FORUMS} from '../../features/forums/forums';
+import {useAppSelector} from '../../store/configureStore';
+import {selectForum} from '../../features/forums/forumsSlice';
+
 import {ForumsDetailsScreenProps as Props} from '../../navigation/types';
 
 const ForumsDetailsScreen = ({route, navigation}: Props) => {
   const {forumId} = route.params;
-  const forum = PROTOTYPE_FORUMS[forumId];
+  const forum = useAppSelector(state => selectForum(state, forumId));
 
   useEffect(() => {
     navigation.setOptions({title: forum.title ?? 'Nicht gefunden'});

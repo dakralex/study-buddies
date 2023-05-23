@@ -2,13 +2,17 @@ import React from 'react';
 import AppScreen from '../AppScreen';
 import NotificationList from '../../components/organisms/NotificationList';
 
+import {useAppSelector} from '../../store/configureStore';
+import {selectNotifications} from '../../features/notifications/notificationsSlice';
+
 import {NotificationsScreenProps as Props} from '../../navigation/types';
-import {PROTOTYPE_NOTIFICATIONS} from '../../features/notifications/notifications';
 
 const NotificationsScreen = ({}: Props) => {
+  const notifications = useAppSelector(selectNotifications);
+
   return (
     <AppScreen scroll={true} padded={false}>
-      <NotificationList notifications={PROTOTYPE_NOTIFICATIONS} />
+      <NotificationList notifications={notifications} />
     </AppScreen>
   );
 };

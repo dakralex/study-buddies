@@ -2,13 +2,17 @@ import React from 'react';
 import AppScreen from '../AppScreen';
 import ForumOverviewList from '../../components/organisms/ForumOverviewList';
 
-import {PROTOTYPE_FORUMS} from '../../features/forums/forums';
+import {useAppSelector} from '../../store/configureStore';
+import {selectForums} from '../../features/forums/forumsSlice';
+
 import {ForumsOverviewScreenProps as Props} from '../../navigation/types';
 
 const ForumsOverviewScreen = ({}: Props) => {
+  const forums = useAppSelector(selectForums);
+
   return (
     <AppScreen scroll={true} padded={false}>
-      <ForumOverviewList forums={PROTOTYPE_FORUMS} />
+      <ForumOverviewList forums={forums} />
     </AppScreen>
   );
 };

@@ -1,5 +1,5 @@
 import {Notifications} from './types';
-import {PROTOTYPE_FORUMS} from '../forums/forums';
+import {PROTOTYPE_FORUMS} from '../forums/prototype';
 
 export const PROTOTYPE_NOTIFICATIONS: Notifications = {
   '573a535b-648d-4f4a-952e-7469d48cc5a1': {

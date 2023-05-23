@@ -9,13 +9,15 @@ import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
 import UserAvatarSlider from '../../components/organisms/UserAvatarSlider';
 import FloatingActionButton from '../../components/atoms/buttons/FloatingActionButton';
 
-import {PROTOTYPE_USERS} from '../../features/users/users';
-import {PROTOTYPE_COURSES} from '../../features/courses/courses';
+import {useAppSelector} from '../../store/configureStore';
+import {selectUsersById} from '../../features/users/usersSlice';
+import {selectCourse} from '../../features/courses/coursesSlice';
+
 import {CoursesDetailsScreenProps as Props} from '../../navigation/types';
 
 const CoursesDetailsScreen = ({navigation, route}: Props) => {
   const {courseId} = route.params;
-  const course = PROTOTYPE_COURSES[courseId];
+  const course = useAppSelector(state => selectCourse(state, courseId));
   const [toggleButtonState, setToggleButtonState] = useState(
     !course.mentee_ids.includes('558966f0-ea4d-4bcc-bc14-544b07b28182'),
   );
@@ -25,12 +27,9 @@ const CoursesDetailsScreen = ({navigation, route}: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [course?.title]);
 
-  const mentees = course.mentee_ids.reduce((obj, key) => {
-    if (PROTOTYPE_USERS && PROTOTYPE_USERS.hasOwnProperty(key)) {
-      obj[key] = PROTOTYPE_USERS[key];
-    }
-    return obj;
-  }, {});
+  const mentees = useAppSelector(state =>
+    selectUsersById(state, course.mentee_ids),
+  );
 
   return (
     <AppScreen
