@@ -5,6 +5,7 @@ export type User = {
   avatar: any;
 };
 
+export type UsersKey = string;
 export type Users = {
-  [user_id: string]: User;
+  [user_id: UsersKey]: User;
 };

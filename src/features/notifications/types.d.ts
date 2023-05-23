@@ -8,6 +8,7 @@ export type Notification = {
   link_id: string;
 };
 
+export type NotificationsKey = string;
 export type Notifications = {
-  [notification_id: string]: Notification;
+  [notification_id: NotificationsKey]: Notification;
 };

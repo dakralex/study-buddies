@@ -1,5 +1,5 @@
-import {Course, Courses} from './types';
 import {PROTOTYPE_COURSES} from './prototype';
+import {Course, Courses, CoursesKey} from './types';
 import {RootState} from '../../store/configureStore';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
@@ -25,7 +25,7 @@ export const coursesSlice = createSlice({
 
 export const selectCourses = (state: RootState) => state.courses.courses;
 
-export const selectCourse = (state: RootState, courseId: Course['id']) =>
+export const selectCourse = (state: RootState, courseId: CoursesKey) =>
   state.courses.courses[courseId];
 
 export const {addCourse} = coursesSlice.actions;

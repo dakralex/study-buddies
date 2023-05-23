@@ -11,13 +11,22 @@ export type Post = {
   author_id: string;
   timestamp: string;
   content: string;
-  answers?: Posts;
+  answers?: Answers;
 };
 
+export type Answer = Omit<Post, 'title' | 'answers'>;
+
+export type ForumsKey = string;
 export type Forums = {
-  [forum_id: string]: Forum;
+  [forum_id: ForumsKey]: Forum;
 };
 
+export type PostsKey = string;
 export type Posts = {
-  [post_id: string]: Post;
+  [post_id: PostsKey]: Post;
+};
+
+export type AnswersKey = PostsKey;
+export type Answers = {
+  [answer_id: AnswersKey]: Answer;
 };

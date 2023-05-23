@@ -8,7 +8,7 @@ interface NotificationsState {
   notifications: Notifications;
 }
 
-type NotificationInput = Omit<Notification, ['id']>;
+type NotificationInput = Omit<Notification, 'id'>;
 
 const initialState: NotificationsState = {
   notifications: PROTOTYPE_NOTIFICATIONS,

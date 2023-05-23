@@ -1,24 +1,24 @@
 import uuid from 'react-native-uuid';
-import {Forum, Forums, Post} from './types';
 import {PROTOTYPE_FORUMS} from './prototype';
 import {RootState} from '../../store/configureStore';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {Forum, Forums, ForumsKey, Post, PostsKey} from './types';
 
 interface ForumsState {
   forums: Forums;
 }
 
-type ForumInput = Omit<Forum, ['id']>;
+type ForumInput = Omit<Forum, 'id'>;
 
 type PostInput = {
-  forumId: Forum['id'];
-  post: Omit<Post, ['id']>;
+  forumId: ForumsKey;
+  post: Omit<Post, 'id'>;
 };
 
 type AnswerInput = {
-  forumId: Forum['id'];
-  postId: Post['id'];
-  answer: Omit<Post, ['id']>;
+  forumId: ForumsKey;
+  postId: PostsKey;
+  answer: Omit<Post, 'id'>;
 };
 
 const initialState: ForumsState = {
@@ -64,13 +64,13 @@ export const forumsSlice = createSlice({
 
 export const selectForums = (state: RootState) => state.forums.forums;
 
-export const selectForum = (state: RootState, forumId: Forum['id']) =>
+export const selectForum = (state: RootState, forumId: ForumsKey) =>
   state.forums.forums[forumId];
 
 export const selectPost = (
   state: RootState,
-  forumId: Forum['id'],
-  postId: Post['id'],
+  forumId: ForumsKey,
+  postId: PostsKey,
 ) => state.forums.forums[forumId]?.posts[postId];
 
 export const {addForum, addPost, addAnswer} = forumsSlice.actions;

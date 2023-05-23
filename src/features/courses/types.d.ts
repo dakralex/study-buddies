@@ -8,6 +8,7 @@ export type Course = {
   forum_id: string;
 };
 
+export type CoursesKey = string;
 export type Courses = {
-  [course_id: string]: Course;
+  [course_id: CoursesKey]: Course;
 };
