@@ -1,4 +1,23 @@
 import useStyles from '../hooks/useStyles';
+import {Theme} from '@react-navigation/native';
+import {useColorPalette} from '../hooks/Colors';
+import {useColorScheme} from 'react-native';
+
+export const useNavigationTheme = (): Theme => {
+  const colorPalette = useColorPalette();
+
+  return {
+    colors: {
+      primary: colorPalette.primary,
+      text: colorPalette.foreground,
+      background: colorPalette.background,
+      card: colorPalette.gray,
+      border: colorPalette.gray,
+      notification: colorPalette.primary,
+    },
+    dark: useColorScheme() !== 'light',
+  };
+};
 
 const useNavigationStyles = () =>
   useStyles(({colorPalette}) => ({
