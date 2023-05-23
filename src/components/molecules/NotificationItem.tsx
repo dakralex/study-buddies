@@ -28,6 +28,7 @@ const NotificationItem = (props: NotificationItemProps) => {
       onPress={() => {
         navigation.navigate('Forums', {
           screen: 'PostDetails',
+          initial: false,
           params: {
             postId: postId,
             forumId: forumId,
