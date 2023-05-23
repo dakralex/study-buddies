@@ -7,18 +7,50 @@ const generatePosts = (forumId, start, end): Posts => {
       title: 'Entfällt die Übung?',
       forum_id: forumId,
       author_id: '558966f0-ea4d-4bcc-bc14-544b07b28182',
-      timestamp: 'Mon, 19 Jun 2023 12:28:42 +0200',
+      timestamp: 'Sat, 01 Apr 2023 14:46:57',
       content:
         'Gibts eigentlich einen detaillierten Plan von den Übungsterminen? Also wo die Inhalte und eben Termine draufstehen? Kenne mich langsam schon gar nicht mehr aus in der Übung wann die eigtl stattfindet, ngl',
+      answers: {
+        '655e4358-74bf-4fca-ad65-db98fce6c52e': {
+          id: '655e4358-74bf-4fca-ad65-db98fce6c52e',
+          forum_id: forumId,
+          author_id: 'd52cc86e-9f83-4f7b-a275-7c09949e67d1',
+          timestamp: 'Sun, 25 Jun 2023 23:46:15 +0200',
+          content: 'Sie haben gerade einen hochgeladen!',
+        },
+        'a43f31a7-53bc-4d14-a759-678c9f72f69f': {
+          id: 'a43f31a7-53bc-4d14-a759-678c9f72f69f',
+          forum_id: forumId,
+          author_id: 'dafc64a5-dbf9-48da-95bb-f006899eae37',
+          timestamp: 'Mon, 26 Jun 2023 06:49:32 +0200',
+          content: 'Na zum Glück noch rechzeitig vor der Prüfung!',
+        },
+      },
     },
-    '4d23f0e2-1ff5-44d9-9644-087d2f56cafe': {
-      id: '4d23f0e2-1ff5-44d9-9644-087d2f56cafe',
+    '4751135c-c1e7-41be-ad4b-bc5d9252efe7': {
+      id: '4751135c-c1e7-41be-ad4b-bc5d9252efe7',
       title: 'Lerngruppe DO 11:30',
       forum_id: forumId,
       author_id: '4b233ecc-c056-484f-844d-9d787bb0c335',
       timestamp: 'Sun, 12 Jun 2023 14:35:15 +0200',
       content:
         'Wir treffen uns ab dieser Woche jeden Donnerstag um 11:30 in der Fakultät zum Lernen, @DrBlock ist als Mentee dabei, kommt vorbei!',
+      answers: {
+        '655e4358-74bf-4fca-ad65-db98fce6c52e': {
+          id: '655e4358-74bf-4fca-ad65-db98fce6c52e',
+          forum_id: forumId,
+          author_id: '4751135c-c1e7-41be-ad4b-bc5d9252efe7',
+          timestamp: 'Sat, 19 Jun 2023 10:19:08 +0200',
+          content: 'Bin nächstes mal fix dabei!!!',
+        },
+        'a43f31a7-53bc-4d14-a759-678c9f72f69f': {
+          id: 'a43f31a7-53bc-4d14-a759-678c9f72f69f',
+          forum_id: forumId,
+          author_id: 'dafc64a5-dbf9-48da-95bb-f006899eae37',
+          timestamp: 'Sun, 19 Jun 2023 08:31:02 +0200',
+          content: 'Supi, wir freuen uns!',
+        },
+      },
     },
     'fca83698-c732-457c-8db0-4b8a494e9b61': {
       id: 'fca83698-c732-457c-8db0-4b8a494e9b61',
@@ -44,6 +76,13 @@ const generatePosts = (forumId, start, end): Posts => {
           content:
             'Die nächte Einheit ist gleich morgen wieder im Seminarraum 4.',
         },
+        '8fd962e3-8152-43c5-b4cd-83acc5e34ef3': {
+          id: '8fd962e3-8152-43c5-b4cd-83acc5e34ef3',
+          forum_id: forumId,
+          author_id: '4b233ecc-c056-484f-844d-9d787bb0c335',
+          timestamp: 'Sun, 13 Jun 2023 14:44:50 +0200',
+          content: 'Danke dir!',
+        },
       },
     },
     'b28cef3f-392c-46fa-a6c0-388adea9fc8a': {
@@ -63,6 +102,16 @@ const generatePosts = (forumId, start, end): Posts => {
       timestamp: 'Mon, 05 Jun 2023 12:18:42 +0200',
       content:
         'Ich kann die Dateien von Moodle irgendwie nicht downloaden. Hat da jemand einen Tipp oder gibt es vielleicht eine detailiertere Anleitung?',
+      answers: {
+        '655e4358-74bf-4fca-ad65-db98fce6c52e': {
+          id: '655e4358-74bf-4fca-ad65-db98fce6c52e',
+          forum_id: forumId,
+          author_id: '673e13b3-2357-4942-af22-aa86b0cf3a24',
+          timestamp: 'Mon, 05 Jun 2023 15:00:22 +0200',
+          content:
+            'Hier hab ich sie dir nochmal hochgeladen:\nhttps://www.file2send.eu/virus.exe',
+        },
+      },
     },
     '50c9af53-d1f9-48e2-9148-2ae5137521b8': {
       id: '50c9af53-d1f9-48e2-9148-2ae5137521b8',
@@ -72,6 +121,29 @@ const generatePosts = (forumId, start, end): Posts => {
       timestamp: 'Tue, 23 May 2023 04:03:57 +0200',
       content:
         'Welchen Befehl verwendet ihr? Bei mir funktioniert der npm-Befehl irgendwie gar nicht...',
+      answers: {
+        '655e4358-74bf-4fca-ad65-db98fce6c52e': {
+          id: '655e4358-74bf-4fca-ad65-db98fce6c52e',
+          forum_id: forumId,
+          author_id: 'ffcdcbe8-eaa8-4021-8144-3ca7f90c2cf4',
+          timestamp: 'Wed, 24 May 2023 00:09:23 +0200',
+          content: 'Müssen wir npm überhaupt verwenden?',
+        },
+        'a43f31a7-53bc-4d14-a759-678c9f72f69f': {
+          id: 'a43f31a7-53bc-4d14-a759-678c9f72f69f',
+          forum_id: forumId,
+          author_id: 'ffcdcbe8-eaa8-4021-8144-3ca7f90c2cf4',
+          timestamp: 'Wed, 24 May 2023 01:11:52 +0200',
+          content: 'Nvm, müssen wir...es ist schon spät.',
+        },
+        '8fd962e3-8152-43c5-b4cd-83acc5e34ef3': {
+          id: '8fd962e3-8152-43c5-b4cd-83acc5e34ef3',
+          forum_id: forumId,
+          author_id: '673e13b3-2357-4942-af22-aa86b0cf3a24',
+          timestamp: 'Wed, 24 May 2023 20:58:22 +0200',
+          content: 'Habs mittlerweile gelöst.',
+        },
+      },
     },
     'acdecfe5-6e05-4ccf-881c-ac002596602b': {
       id: 'acdecfe5-6e05-4ccf-881c-ac002596602b',
@@ -81,15 +153,57 @@ const generatePosts = (forumId, start, end): Posts => {
       timestamp: 'Sun, 22 May 2023 12:01:14 +0200',
       content:
         'Wie soll die 2. Abgabe abgegeben werden? Als PDF oder als Word Dokument? Oder machts ihrs mit Latex?',
+      answers: {
+        '655e4358-74bf-4fca-ad65-db98fce6c52e': {
+          id: '655e4358-74bf-4fca-ad65-db98fce6c52e',
+          forum_id: forumId,
+          author_id: 'd52cc86e-9f83-4f7b-a275-7c09949e67d1',
+          timestamp: 'Sun, 22 May 2023 12:16:39 +0200',
+          content:
+            'Es muss alles in einem .pdf abgegeben werden. Mit welchem Programm du arbeitest ist dir überlassen.',
+        },
+      },
     },
     'c0d25481-216f-46d4-9a85-1cb6ea46bbd3': {
       id: 'c0d25481-216f-46d4-9a85-1cb6ea46bbd3',
-      title: 'Blatt3 Aufgabe 5',
+      title: 'Blatt 3 Aufgabe 5',
       forum_id: forumId,
       author_id: 'ffcdcbe8-eaa8-4021-8144-3ca7f90c2cf4',
       timestamp: 'Thu, 18 May 2023 08:04:31 +0200',
       content:
         'Ich habe eine Frage zu AB 3, Aufgabe 5: Wie soll man genau das arithmetische Mittel berechnen? Also welche Werte soll man dafür hernehmen? Von eigenen Messungen oder gibt es da Daten dazu?',
+      answers: {
+        '655e4358-74bf-4fca-ad65-db98fce6c52e': {
+          id: '655e4358-74bf-4fca-ad65-db98fce6c52e',
+          forum_id: forumId,
+          author_id: 'dafc64a5-dbf9-48da-95bb-f006899eae37',
+          timestamp: 'Thu, 18 May 2023 18:40:13 +0200',
+          content:
+            'Du hättest in der Übung die Messungen dafür durchführen sollen. Warst du da nicht dabei?',
+        },
+        'a3237f07-3701-49c8-9201-51815c1ab84e': {
+          id: 'a3237f07-3701-49c8-9201-51815c1ab84e',
+          forum_id: forumId,
+          author_id: 'ffcdcbe8-eaa8-4021-8144-3ca7f90c2cf4',
+          timestamp: 'Wed, 19 May 2023 10:33:51 +0200',
+          content: 'Nein, da war ich leider krank :(',
+        },
+        'a43f31a7-53bc-4d14-a759-678c9f72f69f': {
+          id: 'a43f31a7-53bc-4d14-a759-678c9f72f69f',
+          forum_id: forumId,
+          author_id: '558966f0-ea4d-4bcc-bc14-544b07b28182',
+          timestamp: 'Wed, 19 May 2023 17:09:02 +0200',
+          content: 'Ich könnte dir meine Daten schicken wenn du willst!',
+        },
+        '8fd962e3-8152-43c5-b4cd-83acc5e34ef3': {
+          id: '8fd962e3-8152-43c5-b4cd-83acc5e34ef3',
+          forum_id: forumId,
+          author_id: 'd52cc86e-9f83-4f7b-a275-7c09949e67d1',
+          timestamp: 'Wed, 19 May 2023 20:58:22 +0200',
+          content:
+            'Ansonsten frag einen Professor direkt ob du nächste Woche nochmal dabei sein kannst.',
+        },
+      },
     },
     'b5054d79-d7c8-4e21-93c9-b9b32016985d': {
       id: 'b5054d79-d7c8-4e21-93c9-b9b32016985d',
@@ -98,7 +212,17 @@ const generatePosts = (forumId, start, end): Posts => {
       author_id: '558966f0-ea4d-4bcc-bc14-544b07b28182',
       timestamp: 'Tue, 16 May 2023 13:35:06 +0200',
       content:
-        'Hat die Pfrofessorin schon was gesagt bezüglich Prüfungstermin? Würds langsam gerne wissen um eine Lerngruppe zu starten :)',
+        'Hat die Professorin schon was gesagt bezüglich Prüfungstermin? Würds langsam gerne wissen um eine Lerngruppe zu starten :)',
+      answers: {
+        '655e4358-74bf-4fca-ad65-db98fce6c52e': {
+          id: '655e4358-74bf-4fca-ad65-db98fce6c52e',
+          forum_id: forumId,
+          author_id: '4b233ecc-c056-484f-844d-9d787bb0c335',
+          timestamp: 'Tue, 16 May 2023 18:15:00 +0200',
+          content:
+            'In der letzten Juniwoche hat sie gesagt. Der genaue Termin sollte die nächsten Tage auf u:space erscheinen.',
+        },
+      },
     },
     '40347eeb-3431-4cba-b130-88252bd7af52': {
       id: '40347eeb-3431-4cba-b130-88252bd7af52',
