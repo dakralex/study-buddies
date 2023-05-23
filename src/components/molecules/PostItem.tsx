@@ -21,7 +21,7 @@ const PostItem = (props: PostItemProps) => {
     <SearchResultItem
       onPress={onPress}
       title={title ?? ''}
-      description={`${user.fullname} at ${postDateString}`}
+      description={`${user?.fullname} at ${postDateString}`}
     />
   );
 };

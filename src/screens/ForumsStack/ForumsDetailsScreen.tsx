@@ -28,7 +28,10 @@ const ForumsDetailsScreen = ({route, navigation}: Props) => {
         <FloatingActionButton
           buttonProps={{
             onPress: () => {
-              navigation.navigate('PostCreate');
+              navigation.navigate('PostCreate', {
+                forumId: forumId,
+                postId: undefined,
+              });
             },
           }}>
           Post erstellen

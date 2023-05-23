@@ -34,11 +34,7 @@ const ForumsStackNavigation = () => {
         component={ForumsDetailsScreen}
       />
       <ForumsStack.Screen name="PostDetails" component={PostDetailsScreen} />
-      <ForumsStack.Screen
-        name="PostCreate"
-        component={PostCreateScreen}
-        initialParams={{isParentPost: true}}
-      />
+      <ForumsStack.Screen name="PostCreate" component={PostCreateScreen} />
     </ForumsStack.Navigator>
   );
 };

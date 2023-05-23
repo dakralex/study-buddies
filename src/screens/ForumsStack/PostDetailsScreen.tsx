@@ -30,7 +30,8 @@ const PostDetailsScreen = ({route, navigation}: Props) => {
           buttonProps={{
             onPress: () => {
               navigation.navigate('PostCreate', {
-                isParentPost: false,
+                forumId: forumId,
+                postId: postId,
               });
             },
           }}>

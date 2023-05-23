@@ -11,6 +11,7 @@ import {
   NativeStackNavigationProp,
   NativeStackScreenProps,
 } from '@react-navigation/native-stack';
+import {ForumsKey, PostsKey} from '../features/forums/types';
 
 /**                                                                          **/
 /**                         NAVIGATION PARAM LISTS                           **/
@@ -37,9 +38,9 @@ export type CoursesStackParamList = {
 
 export type ForumsStackParamList = {
   ForumsOverview: undefined;
-  ForumsDetails: {forumId: string};
-  PostDetails: {forumId: string; postId: string};
-  PostCreate: {isParentPost: boolean};
+  ForumsDetails: {forumId: ForumsKey};
+  PostDetails: {forumId: ForumsKey; postId: PostsKey};
+  PostCreate: {forumId: ForumsKey; postId?: PostsKey};
 };
 
 /**                                                                          **/

@@ -8,14 +8,14 @@ interface ForumsState {
   forums: Forums;
 }
 
-type ForumInput = Omit<Forum, 'id'>;
+export type ForumInput = Omit<Forum, 'id'>;
 
-type PostInput = {
+export type PostInput = {
   forumId: ForumsKey;
   post: Omit<Post, 'id'>;
 };
 
-type AnswerInput = {
+export type AnswerInput = {
   forumId: ForumsKey;
   postId: PostsKey;
   answer: Omit<Post, 'id'>;
@@ -38,24 +38,29 @@ export const forumsSlice = createSlice({
       state.forums[forum.id] = forum;
     },
     addPost: (state: ForumsState, action: PayloadAction<PostInput>) => {
-      const {forumId, postInput} = action.payload;
+      const {forumId, post: postInput} = action.payload;
       const post: Post = {
-        id: uuid.v4(),
+        id: uuid.v4() as string,
         ...postInput,
       };
 
-      if (state.forums[forumId]?.posts) {
+      if (state.forums[forumId]) {
         state.forums[forumId].posts[post.id] = post;
       }
     },
     addAnswer: (state: ForumsState, action: PayloadAction<AnswerInput>) => {
-      const {forumId, postId, postInput: answerInput} = action.payload;
+      const {forumId, postId, answer: answerInput} = action.payload;
       const answer: Post = {
-        id: uuid.v4(),
+        id: uuid.v4() as string,
         ...answerInput,
       };
 
-      if (state.forums[forumId]?.posts[postId]?.answers) {
+      // TODO Refactor
+      if (state.forums[forumId]?.posts?.[postId]) {
+        if (!state.forums[forumId]?.posts?.[postId].answers) {
+          state.forums[forumId].posts[postId].answers = {};
+        }
+
         state.forums[forumId].posts[postId].answers[answer.id] = answer;
       }
     },

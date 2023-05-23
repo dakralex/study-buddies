@@ -7,13 +7,20 @@ import Container from '../../components/atoms/Container';
 import SubSubHeading from '../../components/atoms/text/SubSubHeading';
 import PrimaryButton from '../../components/atoms/buttons/PrimaryButton';
 
+import {Answer, Post} from '../../features/forums/types';
+import {useAppDispatch} from '../../store/configureStore';
+import {addAnswer, addPost} from '../../features/forums/forumsSlice';
+
 import {PostCreateScreenProps as Props} from '../../navigation/types';
 
 const PostCreateScreen = ({route, navigation}: Props) => {
+  const dispatch = useAppDispatch();
   const colorPalette = useColorPalette();
-  const {isParentPost} = route.params;
+  const {forumId, postId} = route.params;
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+
+  const isParentPost = postId === undefined;
 
   useEffect(() => {
     navigation.setOptions({
@@ -67,6 +74,22 @@ const PostCreateScreen = ({route, navigation}: Props) => {
         />
         <PrimaryButton
           onPress={() => {
+            const input: Omit<Post, 'id'> | Omit<Answer, 'id'> = {
+              title,
+              content,
+              author_id: '558966f0-ea4d-4bcc-bc14-544b07b28182', // TODO Remove hardcoded author
+              forum_id: forumId,
+              timestamp: new Date().toUTCString(),
+            };
+
+            if (isParentPost) {
+              dispatch(addPost({forumId, post: input}));
+            } else {
+              dispatch(
+                addAnswer({forumId, postId: postId as string, answer: input}),
+              );
+            }
+
             navigation.goBack();
           }}>
           Post hinzufügen
